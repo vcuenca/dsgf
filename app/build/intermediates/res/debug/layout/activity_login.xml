@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.google.android.gcm.demo.androidchat.LoginActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/usuario"
+        android:text="ivan"
+        android:layout_margin="10dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:text="ramon"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        android:id="@+id/botonAutenticar"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="¿ No tienes cuenta todavía ?"
+        android:id="@+id/textView"
+        android:layout_marginTop="40dp"
+        android:textColor="#ff2c6dff"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Regístrate aquí!"
+        android:id="@+id/registerLabel"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ff2c6dff"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>
+<!-- From: file:/C:/Users/Vic/workspaceStudio/AndroidChat/app/src/main/res/layout/activity_login.xml -->

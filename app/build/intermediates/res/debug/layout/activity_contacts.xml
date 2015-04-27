@@ -1,0 +1,56 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="es.uv.androidchat.ContactsActivity">
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/black"
+        android:layout_weight="0.05">
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:rowCount="1"
+            android:columnCount="2"
+            android:layout_weight="1.0">
+
+            <TextView android:text="Conversaciones" android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textColor="#fffffffb"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_row="0"
+                android:layout_columnWeight="0.5" />
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:id="@+id/imageView"
+                android:src="@drawable/lupa"
+                android:scaleType="fitXY"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp" />
+
+        </GridLayout>
+
+    </TableRow>
+
+
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.95">
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView"
+            android:layout_column="0"
+            android:entries="@android:color/holo_blue_light" />
+    </TableRow>
+
+</TableLayout>
+<!-- From: file:/C:/Users/Vic/workspaceStudio/AndroidChat/app/src/main/res/layout/activity_contacts.xml -->

@@ -1,0 +1,67 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+
+    tools:context="es.uv.androidchat.ConversationActivity">
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView android:text="Iván Ramón Torán" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:layout_weight="0.5">
+        android:
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView"
+            android:layout_weight="1.0">
+
+            <EditText
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editText2"
+                android:layout_column="0"
+                android:layout_weight="1.0"
+                android:text=""
+                android:singleLine="false"
+                android:editable="false"
+                android:enabled="false"
+                android:textColor="@android:color/black"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <EditText
+            android:id="@+id/tEnvio"
+            android:layout_column="0"
+            android:layout_weight="1.0"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar"
+            android:id="@+id/botonEnviar" />
+
+    </TableRow>
+
+</TableLayout>
+<!-- From: file:/C:/Users/Vic/workspaceStudio/AndroidChat/app/src/main/res/layout/activity_conversation.xml -->
