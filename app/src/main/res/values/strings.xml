@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidChat</string>
+    <string name="registered_user">Has sido registrado en el sistema!!!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_register_result">RegisterResultActivity</string>
+    <string name="title_activity_conversation">ConversationActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_contacts">ContactsActivity</string>
+    <string name="title_activity_find_contact">FindContactActivity</string>
+
+    <string name="contacts_Activity">contacts_Activity</string>
+
+    <string name="findContactActivity">findContactActivity</string>
+
+</resources>

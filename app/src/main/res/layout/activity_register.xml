@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="es.uv.androidchat.RegisterActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/correo"
+        android:layout_gravity="center_horizontal"
+        android:text="Correo . . ."
+        android:layout_margin="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:layout_gravity="center_horizontal"
+        android:text="Password..."
+        android:layout_margin="20dp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Registarme!"
+        android:id="@+id/registerButton"
+        android:layout_margin="20dp" />
+
+</LinearLayout>
