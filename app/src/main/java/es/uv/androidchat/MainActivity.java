@@ -7,12 +7,14 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.text.format.Formatter;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import es.uv.androidchat.JavaObjects.ClientThread;
+import es.uv.androidchat.JavaObjects.Config;
 import es.uv.androidchat.JavaObjects.Conversation;
 import es.uv.androidchat.JavaObjects.GestorDB;
 import es.uv.androidchat.JavaObjects.Mensaje;
@@ -44,21 +46,18 @@ public class MainActivity extends Activity {
         //c.start();
         ListView listaContactos = (ListView)findViewById(R.id.listView);
 
-        String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-                "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
-                "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
-                "Android", "iPhone", "WindowsMobile" };
         final ArrayList<String> list = new ArrayList<String>();
 
        // Obtenemos las conversaciones
-      // ArrayList<Conversation> conversations = (ArrayList<Conversation>) getIntent().getSerializableExtra("conversations");
+       ArrayList<Conversation> conversations = (ArrayList<Conversation>) getIntent().getSerializableExtra("conversations");
 
       //ArrayList<Mensaje> messages = conversations.get
 
 
-        for (int i = 0; i < values.length; ++i) {
-            list.add(values[i]);
+        for (int i = 0; i < conversations.size(); ++i) {
+            list.add(conversations.get(i).getEmisor());
+            Log.i(Config.TAG,conversations.get(i).getEmisor());
+
         }
        final ArrayAdapter adapter = new StableArrayAdapter(this,
                android.R.layout.simple_list_item_1, list);

@@ -1,12 +1,14 @@
 package es.uv.androidchat.JavaObjects;
 
-import java.io.Serializable;
-import java.util.ArrayList;
+        import java.io.Serializable;
+        import java.util.ArrayList;
 
 public class Conversation implements Serializable{
+    static final long serialVersionUID=41L;
 
     private ArrayList<Mensaje> messages;
     private String emisor;
+
     public Conversation(ArrayList<Mensaje> messages,String emisor){
         this.messages = messages;
         this.emisor=emisor;

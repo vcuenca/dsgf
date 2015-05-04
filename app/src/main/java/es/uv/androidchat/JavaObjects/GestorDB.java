@@ -86,8 +86,8 @@ public class GestorDB {
         ArrayList<Mensaje> mensajes = new ArrayList<Mensaje>();
         Mensaje m = null;
         db = helper.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT  MENSAJE FROM CONVERSATION WHERE (EMISOR = " + contacto +
-                ") OR (REMITENTE = " + contacto + ")",null);
+        Cursor c = db.rawQuery("SELECT  MENSAJE FROM CONVERSATION WHERE (EMISOR =' " + contacto +
+                "') OR (REMITENTE = '" + contacto + "')",null);
         Log.i("CC","He consultado los mensajes.");
 
         while(c.move(1)){

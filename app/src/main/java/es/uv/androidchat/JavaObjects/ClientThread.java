@@ -41,11 +41,10 @@ public class ClientThread extends Thread{
             in = new ObjectInputStream(s.getInputStream());
 
             if (mode == 0){
-                authenticateUser(user, password);
-
-                if (isAuthenticated()) {
-                    conversations = getMessagesFromServer(s, out, in);
-                }
+               authenticateUser(user, password);
+                //if (isAuthenticated()) {
+                conversations = getMessagesFromServer(s, out, in);
+              //  }
             }else if (mode == 1){
                 Log.i("ANDROIDCHAT", user + password);
                 registerUser(user, password, (String)params.get(0));
@@ -94,9 +93,9 @@ public class ClientThread extends Thread{
             if (respuesta.equals("OK")) {
                 authenticated = true;
                 //Enviamos la ip
-                out.writeObject("10.0.2.2");
+                //out.writeObject("10.0.2.2");
                 //Enviamos el cloudID
-                out.writeObject("cloudID");
+                //out.writeObject("cloudID");
 
                 Log.i("CHAT", "OK");
             }else
@@ -146,6 +145,7 @@ public class ClientThread extends Thread{
             for (int i = 0; i < numberOfMessages; i++){
                 Conversation conversation = (Conversation)in.readObject();
                 conversations.add(conversation);
+                //GestorDB.getInstance(getApplicationContext()).insertarConversaciones(conversaciones);
                 Log.i("HOLA", "Conversacion recibida");
             }
         } catch (ClassNotFoundException e) {

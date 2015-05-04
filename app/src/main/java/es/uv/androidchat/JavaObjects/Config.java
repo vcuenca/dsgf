@@ -6,7 +6,6 @@ public interface Config {
     //static final String APP_SERVER_URL = "http://192.168.1.17/gcm/gcm.php?shareRegId=1";
 
     // GCM server using java
-    static final String APP_SERVER_URL = "http://192.168.1.17:8080/GCM-App-Server/GCMNotification?shareRegId=1";
     static Usuario user = new Usuario();
     // Google Project Number
     static final String GOOGLE_PROJECT_ID = "492347066058";
@@ -22,7 +21,8 @@ public interface Config {
     static final String CREATE_SYSTEM_TABLE = "CREATE TABLE SYSTEM (PARAMETRO VARCHAR(30), VALOR VARCHAR(50))";
     static final String RECOVER_CONVERSATIONS = "SELECT DISTINCT REMITENTE FROM CONVERSATION";
     static final String TAG = "DEBUG";
-    static final String IP_SERVER = "10.0.2.2";
-    static final int PORT = 1234;
+    //static final String IP_SERVER = "127.0.2.2";
+    static final String IP_SERVER = "147.156.234.32";
+    static final int PORT = 1235;
     static Facade facade = new Facade();
 }

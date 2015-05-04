@@ -69,14 +69,16 @@ public class LoginActivity extends Activity {
 
 
                 Log.d(Config.TAG, GestorDB.getInstance(activity.getApplicationContext()).obtenerPropiedad("usersaved"));
-                /*
-                ClientThread client = new ClientThread("10.0.2.2", 1235, usuario.getText().toString(), password.getText().toString(), null, 0);
+
+                ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, tUsuario.getText().toString(), tPassword.getText().toString(), null, 0);
+               client.start();
+                Log.d(Config.TAG, "DESPUES DE CLIENT THREAD");
+
                 try {
                     client.join();
-                    if (client.isAuthenticated()){
+                    //if (client.isAuthenticated()){
                         GestorDB.getInstance(activity.getApplicationContext()).insertarPropiedad("usersaved", "s");
-                        //
-                        fa
+                        //fa
                         //Abrimos la lista de contactos, pantalla principal
                         Intent intent = new Intent(activity, MainActivity.class);
                         //intent.putExtra(EXTRA_MESSAGE, message);
@@ -92,11 +94,11 @@ public class LoginActivity extends Activity {
                         informacion.putSerializable("conversations", conversations);
                         intent.putExtras(informacion);
                         startActivity(intent);
-                    }
+                    //}
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                */
+
             }
         });
 
