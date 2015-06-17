@@ -73,7 +73,7 @@ public class GestorDB {
         int i = 0;
         ArrayList<String> conversaciones = new ArrayList<String>();
         db = helper.getReadableDatabase();
-        Cursor c = db.rawQuery(Config.RECOVER_CONVERSATIONS,null);
+        Cursor c = db.rawQuery(Config.RECOVER_CONVERSATIONS, null);
         Log.i("CI","Hay "+ c.getCount() + " columnas.");
         while(c.move(1)){
             i++;
@@ -86,8 +86,7 @@ public class GestorDB {
         ArrayList<Mensaje> mensajes = new ArrayList<Mensaje>();
         Mensaje m = null;
         db = helper.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT  MENSAJE FROM CONVERSATION WHERE (EMISOR = " + contacto +
-                ") OR (REMITENTE = " + contacto + ")",null);
+        Cursor c = db.rawQuery("SELECT  MENSAJE FROM CONVERSATION WHERE (EMISOR = '" + contacto + "') OR (REMITENTE = '" + contacto + "')",null);
         Log.i("CC","He consultado los mensajes.");
 
         while(c.move(1)){
@@ -108,15 +107,26 @@ public class GestorDB {
 
     public void insertarConversacion(Conversation conv){
         for (Mensaje mensaje : conv.getMessages()) {
-            insertarMensaje(conv.getEmisor(),"NosotrosMismos",mensaje); //Hay que cambiar los nosotros mismo por nuestro propio ID
+            insertarMensaje(conv.getEmisor(), "NosotrosMismos", mensaje); //Hay que cambiar los nosotros mismo por nuestro propio ID
         }
     }
 
+    public void iniciarConversacion(String userName){
+        db = helper.getWritableDatabase();
+
+        ContentValues nuevoReg = new ContentValues();
+        nuevoReg.put("EMISOR", "nosotros");
+        nuevoReg.put("REMITENTE", userName);
+        //Esto hay que mirarlo!!!!!!!!!!!!!!!
+        nuevoReg.put("MENSAJE", "");
+        nuevoReg.put("FECHA", "");
+        db.insert("CONVERSATION", null, nuevoReg);
+    }
 
     public void insertarMensaje(String emisor,String receptor,Mensaje mensaje){
         ContentValues nuevoReg = new ContentValues();
         nuevoReg.put("EMISOR", emisor);
-        nuevoReg.put("RECEPTOR", receptor);
+        nuevoReg.put("REMITENTE", receptor);
         nuevoReg.put("MENSAJE", mensaje.getTexto());
         nuevoReg.put("FECHA", String.valueOf(mensaje.getFecha()));
         db.insert("CONVERSATION", null, nuevoReg);

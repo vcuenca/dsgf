@@ -1,5 +1,6 @@
 package es.uv.androidchat;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -29,6 +30,7 @@ public class ConversationActivity extends ActionBarActivity {
     private String remitente = "";
     private Button botonEnviar = null;
     private EditText tEnvio = null;
+    final Activity activity = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,9 @@ public class ConversationActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Config.facade.sendText(remitente, tEnvio.getText().toString());
+                GestorDB.getInstance(activity.getApplicationContext()).insertarMensaje("emisor", remitente, new Mensaje(tEnvio.getText().toString(), new Date()));
+                conversacion.setText(conversacion.getText().toString() + "\n" + tEnvio.getText().toString());
+                tEnvio.setText("");
             }
         });
 
@@ -78,9 +83,11 @@ public class ConversationActivity extends ActionBarActivity {
         ArrayList<Mensaje> mensajes = null;
         mensajes = GestorDB.getInstance(getApplicationContext()).obtenerMensajes(remitente);
         String texto = "";
+
         for (Mensaje mensaje : mensajes) {
             texto += mensaje.getTexto() + "\n";
         }
+
         conversacion.setText(texto);
     }
 }

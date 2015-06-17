@@ -52,9 +52,9 @@ public class MainActivity extends Activity {
         final ArrayList<String> list = new ArrayList<String>();
 
        // Obtenemos las conversaciones
-      // ArrayList<Conversation> conversations = (ArrayList<Conversation>) getIntent().getSerializableExtra("conversations");
+       ArrayList<Conversation> conversations = (ArrayList<Conversation>) getIntent().getSerializableExtra("conversations");
 
-      //ArrayList<Mensaje> messages = conversations.get
+        //ArrayList<Mensaje> messages = conversations.get
 
 
         for (int i = 0; i < values.length; ++i) {

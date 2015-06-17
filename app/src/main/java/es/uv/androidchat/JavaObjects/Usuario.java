@@ -5,7 +5,7 @@ public class Usuario {
     private String user;
     private String password;
 
-    public Usuario(){};
+    public Usuario(){}
 
     public Usuario(String _user, String _password){
         setUser(_user);

@@ -84,8 +84,10 @@ public class ContactsActivity extends Activity {
         conv = GestorDB.getInstance(getApplicationContext()).obtenerConversaciones();
 
         cnv = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, conv);
-        contacts.setAdapter(cnv);
 
+        Log.d(Config.TAG, "Hay:" + conv.size() + "conversaciones");
+
+        contacts.setAdapter(cnv);
     }
 
 

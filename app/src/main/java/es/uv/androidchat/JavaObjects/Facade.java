@@ -10,8 +10,18 @@ public class Facade {
 
     //Busca en el servidor los contactos que coinciden con el parametro de entrada
     public ArrayList<String> getContacts(String contactName){
-        //ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", contactName, 3);
-        //return client.getSearchResults();
+        Log.d(Config.TAG, "llego a facade");
+        ArrayList<Object> params = new ArrayList<Object>();
+        params.add(contactName);
+        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", params, 3);
+        client.start();
+        try {
+            client.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return client.getSearchResults();
+        /*
         ArrayList<String> a = new ArrayList<String>();
         a.add("contacto1");
         a.add("contacto2");
@@ -32,6 +42,7 @@ public class Facade {
         a.add("contacto4");
 
         return a;
+        */
     }
 
     public void sendText(String remitente, String text){

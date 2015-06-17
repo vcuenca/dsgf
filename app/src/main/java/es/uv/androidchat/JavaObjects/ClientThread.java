@@ -53,6 +53,7 @@ public class ClientThread extends Thread{
                 sendText((String)params.get(0), (String)params.get(1));
 
             }else if (mode == 3){
+                System.out.println("Aqui llego");
                 searchContacts((String)params.get(0));
             }
 
@@ -67,6 +68,7 @@ public class ClientThread extends Thread{
             out.writeObject(new Integer(3));
             out.writeObject(contactName);
             contacts = (ArrayList)in.readObject();
+            Log.d(Config.TAG, "Hay: " + contacts.size() + "contactos");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
