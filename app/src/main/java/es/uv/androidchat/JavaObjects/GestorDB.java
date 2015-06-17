@@ -73,7 +73,7 @@ public class GestorDB {
         int i = 0;
         ArrayList<String> conversaciones = new ArrayList<String>();
         db = helper.getReadableDatabase();
-        Cursor c = db.rawQuery(Config.RECOVER_CONVERSATIONS, null);
+        Cursor c = db.rawQuery(Config.RECOVER_CONVERSATIONS,null);
         Log.i("CI","Hay "+ c.getCount() + " columnas.");
         while(c.move(1)){
             i++;

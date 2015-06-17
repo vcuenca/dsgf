@@ -16,5 +16,6 @@
     <string name="contacts_Activity">contacts_Activity</string>
 
     <string name="findContactActivity">findContactActivity</string>
+    <string name="mainActivity">mainActivity</string>
 
 </resources>
