@@ -36,7 +36,8 @@ public class GCMNotificationIntentService extends IntentService {
         Bundle extras = intent.getExtras();
         GoogleCloudMessaging gcm = GoogleCloudMessaging.getInstance(this);
 
-        String messageType = "Prueba de pushNotification"/*gcm.getMessageType(intent)*/;
+        String messageType = gcm.getMessageType(intent);
+        Log.d(Config.TAG, "RECIBIENDO");
 
         if (!extras.isEmpty()) {
             if (GoogleCloudMessaging.MESSAGE_TYPE_SEND_ERROR   //Esto estaba aquÃ­ , lo dejo por filtrado ,por si hay problemas luego con GCM.
@@ -54,15 +55,16 @@ public class GCMNotificationIntentService extends IntentService {
 
                 //Aqui recuperamos los mensajes del servidor
 
-                ArrayList<Conversation> conversaciones= (ArrayList<Conversation>) extras.get(Config.MESSAGE_KEY);
+                //ArrayList<Conversation> conversaciones= (ArrayList<Conversation>) extras.get(Config.MESSAGE_KEY);
 
-                GestorDB.getInstance(getApplicationContext()).insertarConversaciones(conversaciones);
+                //GestorDB.getInstance(getApplicationContext()).insertarConversaciones(conversaciones);
 
                 //Mostramos la notificación .
-                sendNotification("Tiene un nuevo mensaje de "+conversaciones.size() + "contactos");
+                sendNotification("Tiene un nuevo mensaje de "+ "ivan" + "contactos");
                 Log.i(TAG, "Received: " + extras.toString());
             }
         }
+
         GcmBroadcastReceiver.completeWakefulIntent(intent);
     }
 
@@ -74,8 +76,8 @@ public class GCMNotificationIntentService extends IntentService {
         PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0,
                 new Intent(getApplicationContext(), MainActivity.class), 0);
 
-        Vibrator v = (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(5000);
+        //Vibrator v = (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+//        v.vibrate(5000);
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
                 this).setSmallIcon(R.drawable.abc_btn_check_to_on_mtrl_000)
@@ -83,7 +85,8 @@ public class GCMNotificationIntentService extends IntentService {
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
                 .setLights(Color.RED, 1, 2)
                 .setAutoCancel(true)
-                .setContentIntent(contentIntent);
+                .setContentIntent(contentIntent)
+                .setSubText(msg);
 
         mBuilder.setContentIntent(contentIntent);
         mNotificationManager.notify(1, mBuilder.build());

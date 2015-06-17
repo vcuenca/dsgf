@@ -3,6 +3,8 @@ package es.uv.androidchat.JavaObjects;
         import java.io.Serializable;
         import java.util.ArrayList;
 
+        import main.java.Mensaje;
+
 public class Conversation implements Serializable{
     static final long serialVersionUID=41L;
 

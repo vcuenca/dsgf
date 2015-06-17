@@ -46,13 +46,13 @@ public class Facade {
     }
 
     public void sendText(String remitente, String text){
-        Log.d(Config.TAG, text);
+        Log.d(Config.TAG, text  + "textp");
         ArrayList<Object> params = new ArrayList<Object>();
         params.add(remitente);
         params.add(text);
 
-        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", params, 3);
-
+        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", params, 2);
+        client.start();
     }
 
 }

@@ -22,7 +22,7 @@ public interface Config {
     static final String RECOVER_CONVERSATIONS = "SELECT DISTINCT REMITENTE FROM CONVERSATION";
     static final String TAG = "DEBUG";
     //static final String IP_SERVER = "127.0.2.2";
-    static final String IP_SERVER = "147.156.234.32";
+    static final String IP_SERVER = "10.0.2.2";
     static final int PORT = 1235;
     static Facade facade = new Facade();
 }

@@ -1913,16 +1913,17 @@ containing a value of this type.
         public static final int decline=0x7f0c0032;
         public static final int findContactActivity=0x7f0c0033;
         public static final int hello_world=0x7f0c0034;
-        public static final int registered_user=0x7f0c0035;
-        public static final int store_picture_message=0x7f0c0036;
-        public static final int store_picture_title=0x7f0c0037;
-        public static final int title_activity_contacts=0x7f0c0038;
-        public static final int title_activity_conversation=0x7f0c0039;
-        public static final int title_activity_find_contact=0x7f0c003a;
-        public static final int title_activity_login=0x7f0c003b;
-        public static final int title_activity_register=0x7f0c003c;
-        public static final int title_activity_register_result=0x7f0c003d;
-        public static final int wallet_buy_button_place_holder=0x7f0c003e;
+        public static final int mainActivity=0x7f0c0035;
+        public static final int registered_user=0x7f0c0036;
+        public static final int store_picture_message=0x7f0c0037;
+        public static final int store_picture_title=0x7f0c0038;
+        public static final int title_activity_contacts=0x7f0c0039;
+        public static final int title_activity_conversation=0x7f0c003a;
+        public static final int title_activity_find_contact=0x7f0c003b;
+        public static final int title_activity_login=0x7f0c003c;
+        public static final int title_activity_register=0x7f0c003d;
+        public static final int title_activity_register_result=0x7f0c003e;
+        public static final int wallet_buy_button_place_holder=0x7f0c003f;
     }
     public static final class style {
         public static final int Animation_AppCompat_DropDownUp=0x7f0d0000;

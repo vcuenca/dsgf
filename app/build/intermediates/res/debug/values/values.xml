@@ -251,6 +251,7 @@
     <eat-comment/>
     <string name="findContactActivity">findContactActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="mainActivity">mainActivity</string>
     <string name="registered_user">Has sido registrado en el sistema!!!</string>
     <!-- From: file:/Users/k3rnel/Documents/Programacion/Android/dsgf/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
     <eat-comment/>

@@ -13,6 +13,8 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Date;
 
+import main.java.Mensaje;
+
 public class GestorDB {
 
     private QuotesReaderDbHelper helper = null;
@@ -90,26 +92,28 @@ public class GestorDB {
         Log.i("CC","He consultado los mensajes.");
 
         while(c.move(1)){
-             m = new Mensaje (c.getString(0), null);
+             m = new Mensaje ();
+            m.setMessage(c.getString(0));
             mensajes.add(m);
         }
         Log.i("CC","He cargado los mensajes.");
         return mensajes;
     }
 
-    public void insertarConversaciones(ArrayList<Conversation> conversaciones) {
+    /*public void insertarConversaciones(ArrayList<Conversation> conversaciones) {
         db = helper.getWritableDatabase();
         for (Conversation conversacione : conversaciones) {
             insertarConversacion(conversacione);
         }
 
     }
+    */
 
-    public void insertarConversacion(Conversation conv){
+    /*public void insertarConversacion(Conversation conv){
         for (Mensaje mensaje : conv.getMessages()) {
             insertarMensaje(conv.getEmisor(), "NosotrosMismos", mensaje); //Hay que cambiar los nosotros mismo por nuestro propio ID
         }
-    }
+    }*/
 
     public void iniciarConversacion(String userName){
         db = helper.getWritableDatabase();
@@ -123,12 +127,12 @@ public class GestorDB {
         db.insert("CONVERSATION", null, nuevoReg);
     }
 
-    public void insertarMensaje(String emisor,String receptor,Mensaje mensaje){
+    public void insertarMensaje(String emisor,String receptor,String message, Date fecha){
         ContentValues nuevoReg = new ContentValues();
         nuevoReg.put("EMISOR", emisor);
         nuevoReg.put("REMITENTE", receptor);
-        nuevoReg.put("MENSAJE", mensaje.getTexto());
-        nuevoReg.put("FECHA", String.valueOf(mensaje.getFecha()));
+        nuevoReg.put("MENSAJE", message);
+        nuevoReg.put("FECHA", String.valueOf(fecha));
         db.insert("CONVERSATION", null, nuevoReg);
     }
 }

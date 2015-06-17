@@ -106,13 +106,13 @@ ADDED from AndroidManifest.xml:39:17
 	android:name
 		ADDED from AndroidManifest.xml:39:25
 category#es.uv.androidchat
-ADDED from AndroidManifest.xml:41:17
+ADDED from AndroidManifest.xml:40:17
 	android:name
-		ADDED from AndroidManifest.xml:41:27
+		ADDED from AndroidManifest.xml:40:27
 service#es.uv.androidchat.GCMNotificationIntentService
-ADDED from AndroidManifest.xml:45:9
+ADDED from AndroidManifest.xml:44:9
 	android:name
-		ADDED from AndroidManifest.xml:45:18
+		ADDED from AndroidManifest.xml:44:18
 activity#es.uv.androidchat.ConversationActivity
 ADDED from AndroidManifest.xml:46:9
 	android:label
@@ -125,6 +125,12 @@ ADDED from AndroidManifest.xml:51:9
 		ADDED from AndroidManifest.xml:53:13
 	android:name
 		ADDED from AndroidManifest.xml:52:13
+activity#es.uv.androidchat.MainActivity
+ADDED from AndroidManifest.xml:54:9
+	android:label
+		ADDED from AndroidManifest.xml:56:13
+	android:name
+		ADDED from AndroidManifest.xml:55:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:22.0.0:20:5

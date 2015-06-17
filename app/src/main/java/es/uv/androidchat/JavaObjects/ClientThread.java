@@ -2,13 +2,14 @@ package es.uv.androidchat.JavaObjects;
 
 import android.util.Log;
 
-import es.uv.androidchat.JavaObjects.Conversation;
+import main.java.Mensaje;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ClientThread extends Thread{
 
@@ -34,12 +35,13 @@ public class ClientThread extends Thread{
     }
 
     public void run(){
+        Log.d(Config.TAG, "thread iniciado con modo " + this.mode);
         Socket s = null;
         try {
             s = new Socket(ipAddress, port);
             out = new ObjectOutputStream(s.getOutputStream());
             in = new ObjectInputStream(s.getInputStream());
-
+            Log.d(Config.TAG, "ajajajajajaaj");
             if (mode == 0){
                authenticateUser(user, password);
                 //if (isAuthenticated()) {
@@ -49,8 +51,8 @@ public class ClientThread extends Thread{
                 Log.i("ANDROIDCHAT", user + password);
                 registerUser(user, password, (String)params.get(0));
             }else if (mode == 2){
+                Log.d(Config.TAG,"MODO 2");
                 sendText((String)params.get(0), (String)params.get(1));
-
             }else if (mode == 3){
                 System.out.println("Aqui llego");
                 searchContacts((String)params.get(0));
@@ -164,9 +166,16 @@ public class ClientThread extends Thread{
     }
 
     public void sendText(String remitente, String message) throws IOException{
-        out.writeObject(new Integer(4));
-        out.writeObject(remitente);
-        out.writeObject(message);
+        //Enviamos el mensaje
+        Log.d(Config.TAG, "hhhhh");
+        out.writeObject(new Integer(2));
+
+        Mensaje nuevoMensaje = new Mensaje();
+        nuevoMensaje.setFrom("ivan");
+        nuevoMensaje.setReceiver(remitente);
+        nuevoMensaje.setMessage(message);
+        nuevoMensaje.setFecha(String.valueOf(new Date()));
+        out.writeObject(nuevoMensaje);
     }
 
 }

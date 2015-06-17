@@ -72,7 +72,6 @@ public class LoginActivity extends Activity {
 
                 ClientThread client = new ClientThread("10.0.2.2", 1235, tUsuario.getText().toString(), tPassword.getText().toString(), null, 0);
 
-                ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, tUsuario.getText().toString(), tPassword.getText().toString(), null, 0);
                client.start();
                 Log.d(Config.TAG, "DESPUES DE CLIENT THREAD");
 

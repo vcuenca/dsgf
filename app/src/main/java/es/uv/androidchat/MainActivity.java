@@ -2,7 +2,6 @@ package es.uv.androidchat;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -17,12 +16,9 @@ import es.uv.androidchat.JavaObjects.ClientThread;
 import es.uv.androidchat.JavaObjects.Config;
 import es.uv.androidchat.JavaObjects.Conversation;
 import es.uv.androidchat.JavaObjects.GestorDB;
-import es.uv.androidchat.JavaObjects.Mensaje;
 import es.uv.androidchat.JavaObjects.StableArrayAdapter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 
 public class MainActivity extends Activity {

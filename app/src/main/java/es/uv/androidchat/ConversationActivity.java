@@ -8,19 +8,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ScrollView;
-import android.widget.TextView;
 
 import es.uv.androidchat.JavaObjects.Config;
 import es.uv.androidchat.JavaObjects.GestorDB;
-import es.uv.androidchat.JavaObjects.Mensaje;
-
-import org.w3c.dom.Text;
+import main.java.Mensaje;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import static es.uv.androidchat.R.id.botonEnviar;
 import static es.uv.androidchat.R.id.editText2;
 
 
@@ -44,7 +39,7 @@ public class ConversationActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Config.facade.sendText(remitente, tEnvio.getText().toString());
-                GestorDB.getInstance(activity.getApplicationContext()).insertarMensaje("emisor", remitente, new Mensaje(tEnvio.getText().toString(), new Date()));
+                GestorDB.getInstance(activity.getApplicationContext()).insertarMensaje("emisor", remitente, tEnvio.getText().toString(), new Date());
                 conversacion.setText(conversacion.getText().toString() + "\n" + tEnvio.getText().toString());
                 tEnvio.setText("");
             }
@@ -85,7 +80,7 @@ public class ConversationActivity extends ActionBarActivity {
         String texto = "";
 
         for (Mensaje mensaje : mensajes) {
-            texto += mensaje.getTexto() + "\n";
+            texto += mensaje.getMessage() + "\n";
         }
 
         conversacion.setText(texto);

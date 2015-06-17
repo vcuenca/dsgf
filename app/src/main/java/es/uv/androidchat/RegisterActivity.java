@@ -10,6 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import es.uv.androidchat.JavaObjects.ClientThread;
+import es.uv.androidchat.JavaObjects.GestorDB;
 import es.uv.androidchat.JavaObjects.RegisterGCM;
 
 
@@ -84,14 +88,16 @@ public class RegisterActivity extends ActionBarActivity {
     public void registerUser(String cloudID) {
         String user = correo.getText().toString();
         String pass = password.getText().toString();
-        /*ConnectionManager.iniciarThread("10.0.2.2", 1235 ,user, pass, cloudID, 1);
-
+        ArrayList<Object> params = new ArrayList<Object>();
+        params.add(cloudID);
+        ClientThread client = new ClientThread("10.0.2.2", 1235 ,user, pass, params, 1);
+        client.start();
         try {
-            ConnectionManager.getClientThread().join();
+            client.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        */
+        GestorDB.getInstance(this.getApplicationContext()).insertarPropiedad("user", "s");
         //if (ConnectionManager.getClientThread().isRegistered()){
         Intent intent = new Intent(activity, ContactsActivity.class);
         startActivity(intent);

@@ -37,12 +37,12 @@
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-
                 <category android:name="es.uv.androidchat" />
             </intent-filter>
         </receiver>
 
         <service android:name=".GCMNotificationIntentService" />
+
         <activity
             android:name=".ConversationActivity"
             android:label="@string/title_activity_conversation" >
