@@ -30,21 +30,27 @@ public class ContactsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i(Config.TAG, "Hola");
+        boolean usuarioRegistrado = true;
 
         if (GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("user").equals("")) {
-            Log.d(Config.TAG, "Hola");
+            Log.d(Config.TAG, "HolaHOLAHOLA");
             Config.user.setUser(GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("user"));
             Config.user.setPassword(GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("pass"));
+            usuarioRegistrado = false;
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
+
         Log.d(Config.TAG, "PEPE");
         Log.d(Config.TAG, "PEPE");
         setContentView(R.layout.activity_contacts);
         final Activity activity = this;
         contacts = (ListView)findViewById(R.id.listView);
         ImageView iv = (ImageView)findViewById(R.id.imageView);
-        cargarConversaciones();
+
+        if (usuarioRegistrado)
+            cargarConversaciones();
+
         iv.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -82,29 +88,30 @@ public class ContactsActivity extends Activity {
         ArrayList<Conversation> conversaciones = Config.facade.getMessages();
 
         //Insertamos las conversaciones en la BD
+        if (conversaciones != null) {
+            for (Conversation c : conversaciones) {
+                //Miramos si ya existe la conversacion, de ser asi solo añadimos los mensajes, si no existe la creamos
+                String remitente = c.getUser();
+                int maxId = 0;
+                if (!GestorDB.getInstance(this.getApplicationContext()).existeConversacion(remitente)) {
+                    GestorDB.getInstance(this.getApplicationContext()).iniciarConversacion(remitente);
+                }
 
-        for (Conversation c: conversaciones){
-            //Miramos si ya existe la conversacion, de ser asi solo añadimos los mensajes, si no existe la creamos
-            String remitente = c.getUser();
-            int maxId = 0;
-            if (!GestorDB.getInstance(this.getApplicationContext()).existeConversacion(remitente)){
-                GestorDB.getInstance(this.getApplicationContext()).iniciarConversacion(remitente);
+                //Obtenemos el id de la conversacion
+                int idConversacion = GestorDB.getInstance(this.getApplicationContext()).obtenerIdConversacion(remitente);
+
+                for (Mensaje m : c.getMessages()) {
+                    Log.d(Config.TAG, "ID MENSAJE:" + m.getId() + "");
+
+                    if (m.getId() > maxId)
+                        maxId = m.getId();
+
+                    GestorDB.getInstance(this.getApplicationContext()).insertarMensaje(idConversacion, m);
+                }
+
+
+                Config.facade.sendConfirmation(maxId);
             }
-
-            //Obtenemos el id de la conversacion
-            int idConversacion = GestorDB.getInstance(this.getApplicationContext()).obtenerIdConversacion(remitente);
-
-            for (Mensaje m: c.getMessages()){
-                Log.d(Config.TAG,"ID MENSAJE:" +  m.getId() + "");
-
-                if (m.getId() > maxId)
-                    maxId = m.getId();
-
-                GestorDB.getInstance(this.getApplicationContext()).insertarMensaje(idConversacion, m);
-            }
-
-
-            Config.facade.sendConfirmation(maxId);
         }
 
         conv = GestorDB.getInstance(getApplicationContext()).obtenerConversaciones();

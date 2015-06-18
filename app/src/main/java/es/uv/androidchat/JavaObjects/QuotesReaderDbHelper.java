@@ -37,7 +37,7 @@ public class QuotesReaderDbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + "MY_USSER");
         db.execSQL("DROP TABLE IF EXISTS " + "SYSTEM");
         db.execSQL("DROP TABLE IF EXISTS " + "CONVERSATION");
-
+        db.execSQL("INSERT INTO SYSTEM ('user', '')");
     }
 
 }
