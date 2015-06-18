@@ -56,6 +56,8 @@ public class ClientThread extends Thread{
             }else if (mode == 3){
                 System.out.println("Aqui llego");
                 searchContacts((String)params.get(0));
+            }else if (mode == 4){
+                sendConfirmation();
             }
 
         } catch (IOException e) {
@@ -186,6 +188,16 @@ public class ClientThread extends Thread{
         nuevoMensaje.setFecha(String.valueOf(new Date()));
         nuevoMensaje.setRecibido(0);
         out.writeObject(nuevoMensaje);
+    }
+
+    private void sendConfirmation(){
+        try {
+            out.writeObject(new Integer(4));
+            Log.d(Config.TAG, params.get(0) + "");
+            out.writeObject(params.get(0));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

@@ -69,5 +69,12 @@ public class Facade {
         return client.getMessagesFromLocal();
     }
 
+    public void sendConfirmation(int maxId){
+        ArrayList<Object> params = new ArrayList<Object>();
+        params.add(new Integer(maxId));
+        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", params, 4);
+        client.start();
+    }
+
 }
 

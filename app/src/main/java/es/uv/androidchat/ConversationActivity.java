@@ -41,7 +41,11 @@ public class ConversationActivity extends ActionBarActivity {
                 Config.facade.sendText(remitente, tEnvio.getText().toString());
 
                 int idConversacion = GestorDB.getInstance(activity.getApplicationContext()).obtenerIdConversacion(remitente);
-                GestorDB.getInstance(activity.getApplicationContext()).insertarMensaje(idConversacion, tEnvio.getText().toString());
+                Mensaje m = new Mensaje();
+                m.setMessage(tEnvio.getText().toString());
+                m.setFecha(String.valueOf(new Date()));
+                m.setReceiver(remitente);
+                GestorDB.getInstance(activity.getApplicationContext()).insertarMensaje(idConversacion, m);
                 conversacion.setText(conversacion.getText().toString() + "\n" + tEnvio.getText().toString());
                 tEnvio.setText("");
             }
