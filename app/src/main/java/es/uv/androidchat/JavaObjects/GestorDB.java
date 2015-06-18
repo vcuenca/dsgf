@@ -131,10 +131,11 @@ public class GestorDB {
         db.insert("CONVERSATION", null, nuevoReg);
     }
 
-    public void insertarMensaje(int idConversacion, String mensaje){
+    public void insertarMensaje(int idConversacion, Mensaje mensaje){
         ContentValues nuevoReg = new ContentValues();
         nuevoReg.put("ID_CONVERSATION", idConversacion);
-        nuevoReg.put("MESSAGE", mensaje);
+        nuevoReg.put("MESSAGE", mensaje.getMessage());
+        nuevoReg.put("FECHA", mensaje.getFecha());
         db.insert("MESSAGES", null, nuevoReg);
     }
 

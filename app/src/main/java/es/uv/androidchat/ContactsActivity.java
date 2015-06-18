@@ -86,7 +86,7 @@ public class ContactsActivity extends Activity {
         for (Conversation c: conversaciones){
             //Miramos si ya existe la conversacion, de ser asi solo añadimos los mensajes, si no existe la creamos
             String remitente = c.getUser();
-
+            int maxId = 0;
             if (!GestorDB.getInstance(this.getApplicationContext()).existeConversacion(remitente)){
                 GestorDB.getInstance(this.getApplicationContext()).iniciarConversacion(remitente);
             }
@@ -94,10 +94,17 @@ public class ContactsActivity extends Activity {
             //Obtenemos el id de la conversacion
             int idConversacion = GestorDB.getInstance(this.getApplicationContext()).obtenerIdConversacion(remitente);
 
+            for (Mensaje m: c.getMessages()){
+                Log.d(Config.TAG,"ID MENSAJE:" +  m.getId() + "");
 
-            for (String m: c.getMessages()){
+                if (m.getId() > maxId)
+                    maxId = m.getId();
+
                 GestorDB.getInstance(this.getApplicationContext()).insertarMensaje(idConversacion, m);
             }
+
+
+            Config.facade.sendConfirmation(maxId);
         }
 
         conv = GestorDB.getInstance(getApplicationContext()).obtenerConversaciones();
