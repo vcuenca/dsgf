@@ -175,6 +175,7 @@ public class ClientThread extends Thread{
         nuevoMensaje.setReceiver(remitente);
         nuevoMensaje.setMessage(message);
         nuevoMensaje.setFecha(String.valueOf(new Date()));
+        nuevoMensaje.setRecibido(0);
         out.writeObject(nuevoMensaje);
     }
 

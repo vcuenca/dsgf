@@ -60,6 +60,7 @@ public class GCMNotificationIntentService extends IntentService {
                 //GestorDB.getInstance(getApplicationContext()).insertarConversaciones(conversaciones);
 
                 //Mostramos la notificación .
+
                 sendNotification("Tiene un nuevo mensaje de "+ "ivan" + "contactos");
                 Log.i(TAG, "Received: " + extras.toString());
             }
