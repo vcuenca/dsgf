@@ -14,7 +14,7 @@ import android.widget.ListView;
 
 import es.uv.androidchat.JavaObjects.ClientThread;
 import es.uv.androidchat.JavaObjects.Config;
-import es.uv.androidchat.JavaObjects.Conversation;
+import main.java.Conversation;
 import es.uv.androidchat.JavaObjects.GestorDB;
 import es.uv.androidchat.JavaObjects.StableArrayAdapter;
 
@@ -51,8 +51,8 @@ public class MainActivity extends Activity {
 
 
         for (int i = 0; i < conversations.size(); ++i) {
-            list.add(conversations.get(i).getEmisor());
-            Log.i(Config.TAG,conversations.get(i).getEmisor());
+            list.add(conversations.get(i).getUser());
+            Log.i(Config.TAG,conversations.get(i).getUser());
 
         }
        final ArrayAdapter adapter = new StableArrayAdapter(this,

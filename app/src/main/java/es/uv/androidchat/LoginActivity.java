@@ -2,13 +2,8 @@ package es.uv.androidchat;
 
 import android.app.Activity;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Vibrator;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,7 +13,7 @@ import android.widget.TextView;
 
 import es.uv.androidchat.JavaObjects.ClientThread;
 import es.uv.androidchat.JavaObjects.Config;
-import es.uv.androidchat.JavaObjects.Conversation;
+import main.java.Conversation;
 import es.uv.androidchat.JavaObjects.GestorDB;
 
 import java.util.ArrayList;

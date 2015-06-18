@@ -31,8 +31,8 @@ public class GestorDB {
         if (gestorDB == null) {
             gestorDB = new GestorDB(context);
         }
-        return gestorDB;
 
+        return gestorDB;
     }
 
     public void insertarPropiedad(String parametro, String valor) {
@@ -121,9 +121,6 @@ public class GestorDB {
         ContentValues nuevoReg = new ContentValues();
         nuevoReg.put("EMISOR", "nosotros");
         nuevoReg.put("REMITENTE", userName);
-        //Esto hay que mirarlo!!!!!!!!!!!!!!!
-        nuevoReg.put("MENSAJE", "");
-        nuevoReg.put("FECHA", "");
         db.insert("CONVERSATION", null, nuevoReg);
     }
 

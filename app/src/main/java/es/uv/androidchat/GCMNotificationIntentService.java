@@ -7,17 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.os.Vibrator;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import es.uv.androidchat.JavaObjects.Config;
-import es.uv.androidchat.JavaObjects.Conversation;
-import es.uv.androidchat.JavaObjects.GestorDB;
-import com.google.android.gms.gcm.GoogleCloudMessaging;
 
-import java.util.ArrayList;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 public class GCMNotificationIntentService extends IntentService {
 
@@ -61,7 +56,7 @@ public class GCMNotificationIntentService extends IntentService {
 
                 //Mostramos la notificación .
 
-                sendNotification("Tiene un nuevo mensaje de "+ "ivan" + "contactos");
+                sendNotification("Tiene un nuevo mensaje de " + "ivan" + "contactos");
                 Log.i(TAG, "Received: " + extras.toString());
             }
         }
@@ -75,7 +70,7 @@ public class GCMNotificationIntentService extends IntentService {
                 .getSystemService(Context.NOTIFICATION_SERVICE);
 
         PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0,
-                new Intent(getApplicationContext(), MainActivity.class), 0);
+                new Intent(getApplicationContext(), ContactsActivity.class), 0);
 
         //Vibrator v = (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
 //        v.vibrate(5000);

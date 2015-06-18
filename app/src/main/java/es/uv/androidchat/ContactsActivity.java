@@ -2,21 +2,18 @@ package es.uv.androidchat;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import es.uv.androidchat.JavaObjects.Config;
-import es.uv.androidchat.JavaObjects.Conversation;
-import es.uv.androidchat.JavaObjects.GestorDB;
+import main.java.Conversation;
 import es.uv.androidchat.JavaObjects.GestorDB;
 
 import java.util.ArrayList;
@@ -81,6 +78,9 @@ public class ContactsActivity extends Activity {
 
     private void cargarConversaciones() {
         Log.i("CI", "Cargo la info");
+        Config.facade.getMessages();
+
+
         conv = GestorDB.getInstance(getApplicationContext()).obtenerConversaciones();
 
         cnv = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, conv);

@@ -16,19 +16,16 @@ public class QuotesReaderDbHelper extends SQLiteOpenHelper {
                 null,//factory
                 Config.DATABASE_VERSION//int version
         );
-
+        Log.d(Config.TAG, "DB HELPER");
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
         try {
-
+            Log.d(Config.TAG, "Tablas creadas");
             db.execSQL(Config.CREATE_CONVERSATION_TABLE);
+            db.execSQL(Config.CREATE_MESSAGES_TABLE);
             db.execSQL(Config.CREATE_SYSTEM_TABLE);
-            db.execSQL("INSERT INTO CONVERSATION VALUES ('IVAN','Adri','JCFVKJFH','FECHA')");
-            db.execSQL("INSERT INTO CONVERSATION VALUES ('VICTOR','Adri','JCFVKJFH','FECHA')");
-            db.execSQL("INSERT INTO SYSTEM VALUES ('usersaved','n')");
 
             // db.close();
         }catch(Exception e){Log.i("BD","Error al crear las tablas. " + e.getMessage());}

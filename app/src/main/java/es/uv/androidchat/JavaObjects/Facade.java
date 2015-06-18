@@ -4,6 +4,8 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+import main.java.Conversation;
+
 public class Facade {
 
     public Facade(){}
@@ -53,6 +55,16 @@ public class Facade {
 
         ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", params, 2);
         client.start();
+    }
+    //Recibe las conversaciones
+    public void getMessages(){
+        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", null, 0);
+        client.start();
+        try {
+            client.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }

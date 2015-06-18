@@ -2,6 +2,7 @@ package es.uv.androidchat.JavaObjects;
 
 import android.util.Log;
 
+import main.java.Conversation;
 import main.java.Mensaje;
 
 import java.io.IOException;
@@ -43,7 +44,6 @@ public class ClientThread extends Thread{
             in = new ObjectInputStream(s.getInputStream());
             Log.d(Config.TAG, "ajajajajajaaj");
             if (mode == 0){
-               authenticateUser(user, password);
                 //if (isAuthenticated()) {
                 conversations = getMessagesFromServer(s, out, in);
               //  }
@@ -140,7 +140,17 @@ public class ClientThread extends Thread{
     }
 
     public ArrayList<Conversation> getMessagesFromServer(Socket s, ObjectOutputStream out, ObjectInputStream in){
+
         conversations = new ArrayList<Conversation>();
+
+        try {
+            out.writeObject(new Integer(0));
+            out.writeObject("ivan");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         //Leemos el número de mensajes que tenemos pendientes a recibir
         try {
             Integer numberOfMessages = (Integer)in.readObject();
@@ -150,7 +160,7 @@ public class ClientThread extends Thread{
                 Conversation conversation = (Conversation)in.readObject();
                 conversations.add(conversation);
                 //GestorDB.getInstance(getApplicationContext()).insertarConversaciones(conversaciones);
-                Log.i("HOLA", "Conversacion recibida");
+                Log.i(Config.TAG, "Conversacion recibida");
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
