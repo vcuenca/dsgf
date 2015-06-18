@@ -57,7 +57,7 @@ public class Facade {
         client.start();
     }
     //Recibe las conversaciones
-    public void getMessages(){
+    public ArrayList<Conversation> getMessages(){
         ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", null, 0);
         client.start();
         try {
@@ -65,6 +65,8 @@ public class Facade {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        return client.getMessagesFromLocal();
     }
 
 }

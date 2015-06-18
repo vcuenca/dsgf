@@ -24,6 +24,7 @@ public class GestorDB {
 
     private GestorDB(Context context) {
         helper = new QuotesReaderDbHelper(context);
+        Log.d(Config.TAG, "constructor de gestordb");
     }
 
 
@@ -71,6 +72,7 @@ public class GestorDB {
 
         return valor;
     }
+
     public ArrayList<String> obtenerConversaciones(){
         int i = 0;
         ArrayList<String> conversaciones = new ArrayList<String>();
@@ -84,12 +86,17 @@ public class GestorDB {
         Log.i("CI", "Hay " + i + " resultados.");
         return conversaciones;
     }
+
     public ArrayList<Mensaje> obtenerMensajes(String contacto){
         ArrayList<Mensaje> mensajes = new ArrayList<Mensaje>();
         Mensaje m = null;
         db = helper.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT  MENSAJE FROM CONVERSATION WHERE (EMISOR = '" + contacto + "') OR (REMITENTE = '" + contacto + "')",null);
-        Log.i("CC","He consultado los mensajes.");
+        Cursor c2 = db.rawQuery("SELECT ID FROM CONVERSATION WHERE REMITENTE = '" + contacto + "'", null);
+        c2.move(1);
+        int idConversation = c2.getInt(0);
+
+        Cursor c = db.rawQuery("SELECT MESSAGE FROM MESSAGES WHERE ID_CONVERSATION = '" + idConversation + "'",null);
+        Log.i("CC", "He consultado los mensajes.");
 
         while(c.move(1)){
              m = new Mensaje ();
@@ -124,13 +131,25 @@ public class GestorDB {
         db.insert("CONVERSATION", null, nuevoReg);
     }
 
-    public void insertarMensaje(String emisor,String receptor,String message, Date fecha){
+    public void insertarMensaje(int idConversacion, String mensaje){
         ContentValues nuevoReg = new ContentValues();
-        nuevoReg.put("EMISOR", emisor);
-        nuevoReg.put("REMITENTE", receptor);
-        nuevoReg.put("MENSAJE", message);
-        nuevoReg.put("FECHA", String.valueOf(fecha));
-        db.insert("CONVERSATION", null, nuevoReg);
+        nuevoReg.put("ID_CONVERSATION", idConversacion);
+        nuevoReg.put("MESSAGE", mensaje);
+        db.insert("MESSAGES", null, nuevoReg);
+    }
+
+    public boolean existeConversacion(String remitente){
+        db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT ID FROM CONVERSATION WHERE REMITENTE = '" + remitente + "'", null);
+
+        return c.move(1);
+    }
+
+    public int obtenerIdConversacion(String remitente){
+        db = helper.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT ID FROM CONVERSATION WHERE REMITENTE = '" + remitente + "'", null);
+        c.move(1);
+        return c.getInt(0);
     }
 }
 

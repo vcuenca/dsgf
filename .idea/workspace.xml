@@ -28,22 +28,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f3d6133-5b3d-473d-8120-d6f4d17f4cb9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/JavaObjects/Conversation.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Conversation.java" afterPath="$PROJECT_DIR$/app/src/main/java/main/java/Conversation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/JavaObjects/ClientThread.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/JavaObjects/ClientThread.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/JavaObjects/Config.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/JavaObjects/Config.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/ContactsActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/ContactsActivity$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/ContactsActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/ContactsActivity$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/ContactsActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/ContactsActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/ConversationActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/ConversationActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/ConversationActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/ConversationActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/JavaObjects/Facade.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/JavaObjects/Facade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/GCMNotificationIntentService.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/GCMNotificationIntentService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/JavaObjects/GestorDB.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/JavaObjects/GestorDB.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/LoginActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/LoginActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/LoginActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/LoginActivity$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/LoginActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/LoginActivity$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/LoginActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/LoginActivity$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/LoginActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/LoginActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/JavaObjects/QuotesReaderDbHelper.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/es/uv/androidchat/JavaObjects/QuotesReaderDbHelper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
@@ -55,12 +48,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/ClientThread.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/ClientThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Config.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Config.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ContactsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ContactsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ConversationActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ConversationActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Facade.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Facade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/GCMNotificationIntentService.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/GCMNotificationIntentService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/GestorDB.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/GestorDB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/QuotesReaderDbHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/QuotesReaderDbHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AndroidChat.iws" />
@@ -110,11 +100,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Facade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Facade.java">
+      <file leaf-file-name="GestorDB.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/GestorDB.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="15" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
+              <caret line="137" column="27" selection-start-line="137" selection-start-column="27" selection-end-line="137" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/RegisterActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="101" column="52" selection-start-line="101" selection-start-column="52" selection-end-line="101" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -124,62 +124,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Config.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientThread.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/ClientThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="161" column="68" selection-start-line="161" selection-start-column="68" selection-end-line="161" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GestorDB.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/GestorDB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding>
-                <element signature="e#532#533#0" expanded="true" />
-                <element signature="e#590#591#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuotesReaderDbHelper.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/QuotesReaderDbHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7621951">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Conversation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/main/java/Conversation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <caret line="19" column="150" selection-start-line="19" selection-start-column="143" selection-end-line="19" selection-end-column="150" />
               <folding />
             </state>
           </provider>
@@ -189,17 +134,17 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ContactsActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <file leaf-file-name="ConversationActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ConversationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="47" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.6052632">
+              <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -1438,7 +1383,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_find_contact.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/FindContactActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ConversationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Mensaje.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/RegisterActivity.java" />
@@ -1446,14 +1390,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/GcmBroadcastReceiver.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/main/java/Mensaje.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/GCMNotificationIntentService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/ClientThread.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/main/java/Conversation.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Facade.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/QuotesReaderDbHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Config.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/ClientThread.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Facade.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ContactsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/GestorDB.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/QuotesReaderDbHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ConversationActivity.java" />
       </list>
     </option>
   </component>
@@ -1786,7 +1731,7 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="true" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
@@ -2046,7 +1991,13 @@
       <option name="project" value="LOCAL" />
       <updated>1434618438120</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="asdasd">
+      <created>1434622812168</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1434622812168</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2071,7 +2022,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.235732" sideWeight="0.61587983" order="9" side_tool="false" content_ui="tabs" />
@@ -2081,13 +2032,14 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3548387" sideWeight="0.48569384" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3548387" sideWeight="0.48569384" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30521092" sideWeight="0.6330472" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30521092" sideWeight="0.6330472" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34888887" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21530758" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21530758" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2101,7 +2053,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287841" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2377,14 +2328,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_contacts.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2394,14 +2337,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/RegisterActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="99" column="89" selection-start-line="99" selection-start-column="89" selection-end-line="99" selection-end-column="89" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/GcmBroadcastReceiver.java">
@@ -2428,34 +2363,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ConversationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="39" selection-start-line="49" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/GCMNotificationIntentService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="77" column="68" selection-start-line="77" selection-start-column="68" selection-end-line="77" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Facade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="15" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/ClientThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="161" column="68" selection-start-line="161" selection-start-column="68" selection-end-line="161" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -2483,18 +2394,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Config.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/QuotesReaderDbHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ContactsActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/ClientThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+          <caret line="172" column="39" selection-start-line="172" selection-start-column="39" selection-end-line="172" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="71" selection-start-line="81" selection-start-column="71" selection-end-line="81" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -2502,28 +2429,49 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/main/java/Conversation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/GestorDB.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="e#532#533#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-          </folding>
+          <caret line="19" column="150" selection-start-line="19" selection-start-column="143" selection-end-line="19" selection-end-column="150" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/QuotesReaderDbHelper.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/JavaObjects/GestorDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7621951">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="137" column="27" selection-start-line="137" selection-start-column="27" selection-end-line="137" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/RegisterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="101" column="52" selection-start-line="101" selection-start-column="52" selection-end-line="101" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ContactsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/es/uv/androidchat/ConversationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6052632">
+          <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
           <folding />
         </state>
       </provider>

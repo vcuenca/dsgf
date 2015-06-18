@@ -159,7 +159,6 @@ public class ClientThread extends Thread{
             for (int i = 0; i < numberOfMessages; i++){
                 Conversation conversation = (Conversation)in.readObject();
                 conversations.add(conversation);
-                //GestorDB.getInstance(getApplicationContext()).insertarConversaciones(conversaciones);
                 Log.i(Config.TAG, "Conversacion recibida");
             }
         } catch (ClassNotFoundException e) {

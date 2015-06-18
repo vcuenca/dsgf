@@ -15,6 +15,7 @@ import android.widget.ListView;
 import es.uv.androidchat.JavaObjects.Config;
 import main.java.Conversation;
 import es.uv.androidchat.JavaObjects.GestorDB;
+import main.java.Mensaje;
 
 import java.util.ArrayList;
 
@@ -78,8 +79,26 @@ public class ContactsActivity extends Activity {
 
     private void cargarConversaciones() {
         Log.i("CI", "Cargo la info");
-        Config.facade.getMessages();
+        ArrayList<Conversation> conversaciones = Config.facade.getMessages();
 
+        //Insertamos las conversaciones en la BD
+
+        for (Conversation c: conversaciones){
+            //Miramos si ya existe la conversacion, de ser asi solo añadimos los mensajes, si no existe la creamos
+            String remitente = c.getUser();
+
+            if (!GestorDB.getInstance(this.getApplicationContext()).existeConversacion(remitente)){
+                GestorDB.getInstance(this.getApplicationContext()).iniciarConversacion(remitente);
+            }
+
+            //Obtenemos el id de la conversacion
+            int idConversacion = GestorDB.getInstance(this.getApplicationContext()).obtenerIdConversacion(remitente);
+
+
+            for (String m: c.getMessages()){
+                GestorDB.getInstance(this.getApplicationContext()).insertarMensaje(idConversacion, m);
+            }
+        }
 
         conv = GestorDB.getInstance(getApplicationContext()).obtenerConversaciones();
 

@@ -39,7 +39,9 @@ public class ConversationActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Config.facade.sendText(remitente, tEnvio.getText().toString());
-                GestorDB.getInstance(activity.getApplicationContext()).insertarMensaje("emisor", remitente, tEnvio.getText().toString(), new Date());
+
+                int idConversacion = GestorDB.getInstance(activity.getApplicationContext()).obtenerIdConversacion(remitente);
+                GestorDB.getInstance(activity.getApplicationContext()).insertarMensaje(idConversacion, tEnvio.getText().toString());
                 conversacion.setText(conversacion.getText().toString() + "\n" + tEnvio.getText().toString());
                 tEnvio.setText("");
             }
@@ -75,6 +77,7 @@ public class ConversationActivity extends ActionBarActivity {
     }
 
     public void cargarMensajes(){
+        conversacion.setText("");
         ArrayList<Mensaje> mensajes = null;
         mensajes = GestorDB.getInstance(getApplicationContext()).obtenerMensajes(remitente);
         String texto = "";
