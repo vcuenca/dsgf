@@ -11,8 +11,11 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import es.uv.androidchat.JavaObjects.Config;
+import main.java.Mensaje;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.google.android.gms.internal.ms;
+import com.google.gson.Gson;
 
 public class GCMNotificationIntentService extends IntentService {
 
@@ -44,19 +47,12 @@ public class GCMNotificationIntentService extends IntentService {
                         + extras.toString());
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE
                     .equals(messageType)) {
+                //Esto es una librería de google que transforma Json en objetos
+                Gson gson=new Gson();
+                //Le pasamos el String que recibimos(Json) y la clase a la que queramos que lo comparta.
+                Mensaje obj2 = gson.fromJson(String.valueOf(extras.get(Config.MESSAGE_KEY)), Mensaje.class);
 
-                //Se supone que este es el caso en el que no habrÃ­a problemas en la recepciÃ³n del mensaje, con lo que deberemos
-                //realizar una consulta al servidor para recuperar los mensajes y guardarlos en la BD.
-
-                //Aqui recuperamos los mensajes del servidor
-
-                //ArrayList<Conversation> conversaciones= (ArrayList<Conversation>) extras.get(Config.MESSAGE_KEY);
-
-                //GestorDB.getInstance(getApplicationContext()).insertarConversaciones(conversaciones);
-
-                //Mostramos la notificación .
-
-                sendNotification("Tiene un nuevo mensaje de " + "ivan" + "contactos");
+                sendNotification( obj2.getFrom() + ": "+obj2.getMessage());
                 Log.i(TAG, "Received: " + extras.toString());
             }
         }
@@ -69,6 +65,7 @@ public class GCMNotificationIntentService extends IntentService {
         mNotificationManager = (NotificationManager) this
                 .getSystemService(Context.NOTIFICATION_SERVICE);
 
+
         PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0,
                 new Intent(getApplicationContext(), ContactsActivity.class), 0);
 
@@ -77,7 +74,7 @@ public class GCMNotificationIntentService extends IntentService {
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
                 this).setSmallIcon(R.drawable.abc_btn_check_to_on_mtrl_000)
-                .setContentTitle("GCM Notification")
+                .setContentTitle("Nuevo mensaje")
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
                 .setLights(Color.RED, 1, 2)
                 .setAutoCancel(true)
