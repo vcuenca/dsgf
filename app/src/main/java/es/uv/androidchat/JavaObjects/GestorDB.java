@@ -129,10 +129,12 @@ public class GestorDB {
         db = helper.getWritableDatabase();
 
         ContentValues nuevoReg = new ContentValues();
-        nuevoReg.put("EMISOR", "nosotros");
+        nuevoReg.put("EMISOR", Config.user.getUser());
         nuevoReg.put("REMITENTE", userName);
+        nuevoReg.put("MENSAJES_PENDIENTES", 0);
         db.insert("CONVERSATION", null, nuevoReg);
     }
+
 
     public void insertarMensaje(int idConversacion, Mensaje mensaje){
         ContentValues nuevoReg = new ContentValues();
@@ -141,7 +143,13 @@ public class GestorDB {
         nuevoReg.put("FECHA", mensaje.getFecha());
         nuevoReg.put("PARA", mensaje.getReceiver());
         nuevoReg.put("DE", mensaje.getFrom());
+        //Aumentamos el número de mensajes pendientes
+        db.execSQL("UPDATE CONVERSATION SET MENSAJES_PENDIENTES=MENSAJES_PENDIENTES + 1 WHERE REMITENTE = '" + mensaje.getFrom() + "'");
         db.insert("MESSAGES", null, nuevoReg);
+    }
+
+    public void resetMensajesPendientes(String from){
+        db.execSQL("UPDATE CONVERSATION SET MENSAJES_PENDIENTES=0 WHERE REMITENTE = '" + from + "'");
     }
 
     public boolean existeConversacion(String remitente){
@@ -158,6 +166,11 @@ public class GestorDB {
         return c.getInt(0);
     }
 
+    public int obtenerMensajesPendientes(String from){
+        Cursor c = db.rawQuery("SELECT MENSAJES_PENDIENTES FROM CONVERSATION WHERE REMITENTE = '" + from + "'", null);
+        c.move(1);
+        return c.getInt(0);
+    }
 }
 
 

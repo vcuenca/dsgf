@@ -439,9 +439,10 @@ int drawable ic_plusone_small_off_client 0x7f020053
 int drawable ic_plusone_standard_off_client 0x7f020054
 int drawable ic_plusone_tall_off_client 0x7f020055
 int drawable lupa 0x7f020056
-int drawable ok 0x7f020057
-int drawable powered_by_google_dark 0x7f020058
-int drawable powered_by_google_light 0x7f020059
+int drawable message 0x7f020057
+int drawable ok 0x7f020058
+int drawable powered_by_google_dark 0x7f020059
+int drawable powered_by_google_light 0x7f02005a
 int id action_bar 0x7f0a0045
 int id action_bar_activity_content 0x7f0a0000
 int id action_bar_container 0x7f0a0044
@@ -455,7 +456,7 @@ int id action_menu_presenter 0x7f0a0003
 int id action_mode_bar 0x7f0a0042
 int id action_mode_bar_stub 0x7f0a0041
 int id action_mode_close_button 0x7f0a0034
-int id action_settings 0x7f0a0068
+int id action_settings 0x7f0a006b
 int id activity_chooser_view_content 0x7f0a0035
 int id adjust_height 0x7f0a0016
 int id adjust_width 0x7f0a0017
@@ -493,6 +494,7 @@ int id icon 0x7f0a003a
 int id ifRoom 0x7f0a001d
 int id image 0x7f0a0037
 int id imageView 0x7f0a0053
+int id imagen 0x7f0a0069
 int id listMode 0x7f0a0009
 int id listView 0x7f0a0054
 int id listView2 0x7f0a005c
@@ -532,10 +534,12 @@ int id showTitle 0x7f0a0011
 int id split_action_bar 0x7f0a0007
 int id strict_sandbox 0x7f0a0027
 int id submit_area 0x7f0a0050
+int id tConversacion 0x7f0a0068
 int id tEnvio 0x7f0a0057
 int id tFecha 0x7f0a0065
 int id tFrom 0x7f0a0064
 int id tMessage 0x7f0a0066
+int id tNumeroMensajes 0x7f0a006a
 int id tabMode 0x7f0a000b
 int id terrain 0x7f0a001a
 int id textView 0x7f0a0060
@@ -581,7 +585,8 @@ int layout activity_main 0x7f04001a
 int layout activity_register 0x7f04001b
 int layout conversation_layout 0x7f04001c
 int layout list_item_layout 0x7f04001d
-int layout support_simple_spinner_dropdown_item 0x7f04001e
+int layout pending_messages 0x7f04001e
+int layout support_simple_spinner_dropdown_item 0x7f04001f
 int menu menu_contacts 0x7f0e0000
 int menu menu_conversation 0x7f0e0001
 int menu menu_find_contact 0x7f0e0002

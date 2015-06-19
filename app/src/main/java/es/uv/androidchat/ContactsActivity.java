@@ -88,7 +88,6 @@ public class ContactsActivity extends Activity {
         ImageView iv = (ImageView)findViewById(R.id.imageView);
 
 
-
         //---------//
 
         if (usuarioRegistrado)
@@ -102,6 +101,7 @@ public class ContactsActivity extends Activity {
                 startActivity(intent);
             }
         });
+
         contacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -136,6 +136,7 @@ public class ContactsActivity extends Activity {
                 //Miramos si ya existe la conversacion, de ser asi solo añadimos los mensajes, si no existe la creamos
                 String remitente = c.getUser();
                 int maxId = 0;
+
                 if (!GestorDB.getInstance(this.getApplicationContext()).existeConversacion(remitente)) {
                     GestorDB.getInstance(this.getApplicationContext()).iniciarConversacion(remitente);
                 }
@@ -152,18 +153,34 @@ public class ContactsActivity extends Activity {
                     GestorDB.getInstance(this.getApplicationContext()).insertarMensaje(idConversacion, m);
                 }
 
-
                 Config.facade.sendConfirmation(maxId);
             }
         }
 
         conv = GestorDB.getInstance(getApplicationContext()).obtenerConversaciones();
 
-        cnv = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, conv);
+        cnv = new ContactArrayAdapter(this, conv);
 
         Log.d(Config.TAG, "Hay:" + conv.size() + "conversaciones");
 
         contacts.setAdapter(cnv);
+    }
+
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        //When BACK BUTTON is pressed, the activity on the stack is restarted
+        //Do what you want on the refresh procedure here
+        conv = GestorDB.getInstance(getApplicationContext()).obtenerConversaciones();
+
+        cnv = new ContactArrayAdapter(this, conv);
+
+        Log.d(Config.TAG, "Hay:" + conv.size() + "conversaciones");
+
+        contacts.setAdapter(cnv);
+
+        Config.facade.conversacionActual = null;
     }
 
 
@@ -188,6 +205,7 @@ public class ContactsActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
     public void addConversation(String conversation){
         conv.add(conversation);
         cnv.notifyDataSetChanged();

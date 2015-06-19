@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import es.uv.androidchat.JavaObjects.Config;
@@ -47,7 +49,7 @@ public class ConversationArrayAdapter extends ArrayAdapter<Mensaje> {
 
         tMessage.setText(mensajes.get(position).getMessage());
         //tFecha.setText(mensajes.get(position).getFecha());
-        tFecha.setText("22:51");
+        tFecha.setText(mensajes.get(position).getFecha().substring(11,16));
         return rowView;
     }
 }

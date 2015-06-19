@@ -61,17 +61,26 @@ public class GCMNotificationIntentService extends IntentService {
 
                 int idConversacion = GestorDB.getInstance(this.getApplicationContext()).obtenerIdConversacion(obj2.getFrom());
                 GestorDB.getInstance(this.getApplicationContext()).insertarMensaje(idConversacion, obj2);
+                //Config.facade.sendConfirmation(obj2.getId());
                 Log.d(Config.TAG, "Mensaje añadido");
 
                 sendNotification(obj2.getFrom() + ": " + obj2.getMessage());
                 Log.i(TAG, "Received: " + extras.toString());
 
-                Config.facade.conversacionActual.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Config.facade.conversacionActual.cargarMensajes();
-                    }
-                });
+                //Reseteamos los mensajes pendientes si se cumple la condicion
+
+                if (Config.facade.conversacionActual != null && Config.facade.conversacionActual.getRemitente().equals(obj2.getFrom()))
+                    GestorDB.getInstance(this.getApplicationContext()).resetMensajesPendientes(obj2.getFrom());
+
+                if (Config.facade.conversacionActual != null) {
+                    Config.facade.conversacionActual.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Config.facade.conversacionActual.cargarMensajes();
+                        }
+                    });
+                }
+
             }
         }
 

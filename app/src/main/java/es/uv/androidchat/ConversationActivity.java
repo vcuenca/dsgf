@@ -49,7 +49,6 @@ public class ConversationActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Config.facade.sendText(remitente, tEnvio.getText().toString());
-
                 int idConversacion = GestorDB.getInstance(activity.getApplicationContext()).obtenerIdConversacion(remitente);
                 Mensaje m = new Mensaje();
                 m.setMessage(tEnvio.getText().toString());
@@ -67,6 +66,7 @@ public class ConversationActivity extends ActionBarActivity {
 
         Bundle bundle = getIntent().getExtras();
         remitente = bundle.getString("remitente");
+        GestorDB.getInstance(this.getApplicationContext()).resetMensajesPendientes(remitente);
         tituloRemitente.setText(remitente);
         cargarMensajes();
     }
@@ -94,13 +94,25 @@ public class ConversationActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void cargarMensajes(){
+    public void cargarMensajes() {
         mensajes.clear();
         mensajes = GestorDB.getInstance(getApplicationContext()).obtenerMensajes(remitente);
         String texto = "";
 
         final ConversationArrayAdapter adapter = new ConversationArrayAdapter(this.getApplicationContext(), mensajes);
         conversacion.setAdapter(adapter);
-        conversacion.setSelection(conversacion.getAdapter().getCount()-1);
+        conversacion.setSelection(conversacion.getAdapter().getCount() - 1);
+    }
+
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        //When BACK BUTTON is pressed, the activity on the stack is restarted
+        //Do what you want on the refresh procedure here
+        GestorDB.getInstance(this.getApplicationContext()).resetMensajesPendientes(remitente);
+    }
+
+    public String getRemitente(){
+        return this.remitente;
     }
 }

@@ -1699,9 +1699,10 @@ containing a value of this type.
         public static final int ic_plusone_standard_off_client=0x7f020054;
         public static final int ic_plusone_tall_off_client=0x7f020055;
         public static final int lupa=0x7f020056;
-        public static final int ok=0x7f020057;
-        public static final int powered_by_google_dark=0x7f020058;
-        public static final int powered_by_google_light=0x7f020059;
+        public static final int message=0x7f020057;
+        public static final int ok=0x7f020058;
+        public static final int powered_by_google_dark=0x7f020059;
+        public static final int powered_by_google_light=0x7f02005a;
     }
     public static final class id {
         public static final int action_bar=0x7f0a0045;
@@ -1717,7 +1718,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0a0042;
         public static final int action_mode_bar_stub=0x7f0a0041;
         public static final int action_mode_close_button=0x7f0a0034;
-        public static final int action_settings=0x7f0a0068;
+        public static final int action_settings=0x7f0a006b;
         public static final int activity_chooser_view_content=0x7f0a0035;
         public static final int adjust_height=0x7f0a0016;
         public static final int adjust_width=0x7f0a0017;
@@ -1755,6 +1756,7 @@ containing a value of this type.
         public static final int ifRoom=0x7f0a001d;
         public static final int image=0x7f0a0037;
         public static final int imageView=0x7f0a0053;
+        public static final int imagen=0x7f0a0069;
         public static final int listMode=0x7f0a0009;
         public static final int listView=0x7f0a0054;
         public static final int listView2=0x7f0a005c;
@@ -1794,10 +1796,12 @@ containing a value of this type.
         public static final int split_action_bar=0x7f0a0007;
         public static final int strict_sandbox=0x7f0a0027;
         public static final int submit_area=0x7f0a0050;
+        public static final int tConversacion=0x7f0a0068;
         public static final int tEnvio=0x7f0a0057;
         public static final int tFecha=0x7f0a0065;
         public static final int tFrom=0x7f0a0064;
         public static final int tMessage=0x7f0a0066;
+        public static final int tNumeroMensajes=0x7f0a006a;
         public static final int tabMode=0x7f0a000b;
         public static final int terrain=0x7f0a001a;
         public static final int textView=0x7f0a0060;
@@ -1847,7 +1851,8 @@ containing a value of this type.
         public static final int activity_register=0x7f04001b;
         public static final int conversation_layout=0x7f04001c;
         public static final int list_item_layout=0x7f04001d;
-        public static final int support_simple_spinner_dropdown_item=0x7f04001e;
+        public static final int pending_messages=0x7f04001e;
+        public static final int support_simple_spinner_dropdown_item=0x7f04001f;
     }
     public static final class menu {
         public static final int menu_contacts=0x7f0e0000;
