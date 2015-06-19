@@ -11,6 +11,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import es.uv.androidchat.JavaObjects.Config;
+import es.uv.androidchat.JavaObjects.GestorDB;
 import main.java.Mensaje;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -52,7 +53,16 @@ public class GCMNotificationIntentService extends IntentService {
                 //Le pasamos el String que recibimos(Json) y la clase a la que queramos que lo comparta.
                 Mensaje obj2 = gson.fromJson(String.valueOf(extras.get(Config.MESSAGE_KEY)), Mensaje.class);
 
-                sendNotification( obj2.getFrom() + ": "+obj2.getMessage());
+                if (!GestorDB.getInstance(this.getApplicationContext()).existeConversacion(obj2.getFrom())) {
+                    GestorDB.getInstance(this.getApplicationContext()).iniciarConversacion(obj2.getFrom());
+                    Log.d(Config.TAG, "Conversacion añadida");
+                }
+
+                int idConversacion = GestorDB.getInstance(this.getApplicationContext()).obtenerIdConversacion(obj2.getFrom());
+                GestorDB.getInstance(this.getApplicationContext()).insertarMensaje(idConversacion ,obj2);
+                Log.d(Config.TAG, "Mensaje añadido");
+
+                sendNotification(obj2.getFrom() + ": " + obj2.getMessage());
                 Log.i(TAG, "Received: " + extras.toString());
             }
         }

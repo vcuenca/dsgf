@@ -147,7 +147,7 @@ public class ClientThread extends Thread{
 
         try {
             out.writeObject(new Integer(0));
-            out.writeObject("ivan");
+            out.writeObject(Config.user.getUser());
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -182,7 +182,7 @@ public class ClientThread extends Thread{
         out.writeObject(new Integer(2));
 
         Mensaje nuevoMensaje = new Mensaje();
-        nuevoMensaje.setFrom("ivan");
+        nuevoMensaje.setFrom(Config.user.getUser());
         nuevoMensaje.setReceiver(remitente);
         nuevoMensaje.setMessage(message);
         nuevoMensaje.setFecha(String.valueOf(new Date()));

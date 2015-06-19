@@ -23,6 +23,7 @@ public interface Config {
     static final String TAG = "DEBUG";
     //static final String IP_SERVER = "127.0.2.2";
     static final String IP_SERVER = "10.0.2.2";
+    //static final String IP_SERVER = "192.168.1.130";
     static final int PORT = 1235;
     static Facade facade = new Facade();
 }

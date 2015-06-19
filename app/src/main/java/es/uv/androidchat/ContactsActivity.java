@@ -68,11 +68,16 @@ public class ContactsActivity extends Activity {
 
         if (GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("user").equals("")) {
             Log.d(Config.TAG, "HolaHOLAHOLA");
-            Config.user.setUser(GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("user"));
-            Config.user.setPassword(GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("pass"));
+
+
+            Log.d(Config.TAG, "USUARIO: " + Config.user.getUser());
+
             usuarioRegistrado = false;
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
+        }else{
+            Config.user.setUser(GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("user"));
+            Config.user.setPassword(GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("pass"));
         }
 
         Log.d(Config.TAG, "PEPE");

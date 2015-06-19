@@ -15,7 +15,7 @@ public class Facade {
         Log.d(Config.TAG, "llego a facade");
         ArrayList<Object> params = new ArrayList<Object>();
         params.add(contactName);
-        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", params, 3);
+        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, Config.user.getUser(), Config.user.getPassword(), params, 3);
         client.start();
         try {
             client.join();
@@ -48,18 +48,17 @@ public class Facade {
     }
 
     public void sendText(String remitente, String text){
-        Log.d(Config.TAG, text  + "textp");
+        Log.d(Config.TAG, text + "textp");
         ArrayList<Object> params = new ArrayList<Object>();
         params.add(remitente);
         params.add(text);
 
-        // "ivan", "ramon" es usuario-contrasenya??
-        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", params, 2);
+        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, Config.user.getUser(), Config.user.getPassword(), params, 2);
         client.start();
     }
     //Recibe las conversaciones
     public ArrayList<Conversation> getMessages(){
-        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", null, 0);
+        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, Config.user.getUser(), Config.user.getPassword(), null, 0);
         client.start();
         try {
             client.join();
@@ -73,7 +72,7 @@ public class Facade {
     public void sendConfirmation(int maxId){
         ArrayList<Object> params = new ArrayList<Object>();
         params.add(new Integer(maxId));
-        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", params, 4);
+        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, Config.user.getUser(), Config.user.getPassword(), params, 4);
         client.start();
     }
 

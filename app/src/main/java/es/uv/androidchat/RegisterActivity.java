@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import es.uv.androidchat.JavaObjects.ClientThread;
+import es.uv.androidchat.JavaObjects.Config;
 import es.uv.androidchat.JavaObjects.GestorDB;
 import es.uv.androidchat.JavaObjects.RegisterGCM;
 
@@ -88,16 +90,28 @@ public class RegisterActivity extends ActionBarActivity {
     public void registerUser(String cloudID) {
         String user = correo.getText().toString();
         String pass = password.getText().toString();
+
+        Log.d(Config.TAG, "USUARIO: " + user);
+        Log.d(Config.TAG, "PASSWORD: " + pass);
+
+
         ArrayList<Object> params = new ArrayList<Object>();
         params.add(cloudID);
-        ClientThread client = new ClientThread("10.0.2.2", 1235 ,user, pass, params, 1);
+        ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT ,user, pass, params, 1);
         client.start();
         try {
             client.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        GestorDB.getInstance(this.getApplicationContext()).insertarPropiedad("user", "s");
+        GestorDB.getInstance(this.getApplicationContext()).insertarPropiedad("user", user);
+        GestorDB.getInstance(this.getApplicationContext()).insertarPropiedad("pass", pass);
+
+        Log.d(Config.TAG, "USUARIO: " + GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("user"));
+        Log.d(Config.TAG, "PASS: " + GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("pass"));
+
+        Config.user.setUser(GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("user"));
+        Config.user.setPassword(GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("pass"));
         //if (ConnectionManager.getClientThread().isRegistered()){
         Intent intent = new Intent(activity, ContactsActivity.class);
         startActivity(intent);
