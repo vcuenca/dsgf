@@ -3,39 +3,45 @@ package es.uv.androidchat;
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import es.uv.androidchat.JavaObjects.Config;
 import es.uv.androidchat.JavaObjects.GestorDB;
+import es.uv.androidchat.JavaObjects.StableArrayAdapter;
 import main.java.Mensaje;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import static es.uv.androidchat.R.id.editText2;
+import static es.uv.androidchat.R.id.listView3;
 
 
 public class ConversationActivity extends ActionBarActivity {
 
-    private EditText conversacion = null;
+    private ListView conversacion = null;
     private String remitente = "";
     private Button botonEnviar = null;
     private EditText tEnvio = null;
     final Activity activity = this;
+    private ArrayList<Mensaje> mensajes = new ArrayList<Mensaje>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversation);
-        conversacion = (EditText) findViewById(editText2);
+        conversacion = (ListView) findViewById(listView3);
         botonEnviar = (Button)findViewById(R.id.botonEnviar);
         tEnvio = (EditText)findViewById(R.id.tEnvio);
         TextView tituloRemitente = (TextView) findViewById(R.id.titRemitente);
+        //Creamos el arraylist que contendrá los mensajes
 
         Config.facade.conversacionActual = (ConversationActivity)activity;
 
@@ -49,9 +55,12 @@ public class ConversationActivity extends ActionBarActivity {
                 m.setMessage(tEnvio.getText().toString());
                 m.setFecha(String.valueOf(new Date()));
                 m.setReceiver(remitente);
+                m.setFrom(Config.user.getUser());
+                Log.d(Config.TAG, "Mensaje insertado desde: " + m.getFrom());
                 GestorDB.getInstance(activity.getApplicationContext()).insertarMensaje(idConversacion, m);
-                conversacion.setText(conversacion.getText().toString() + "\n" + tEnvio.getText().toString());
                 tEnvio.setText("");
+                mensajes.add(m);
+                conversacion.setSelection(conversacion.getAdapter().getCount()-1);
             }
         });
 
@@ -86,15 +95,12 @@ public class ConversationActivity extends ActionBarActivity {
     }
 
     public void cargarMensajes(){
-        conversacion.setText("");
-        ArrayList<Mensaje> mensajes = null;
+        mensajes.clear();
         mensajes = GestorDB.getInstance(getApplicationContext()).obtenerMensajes(remitente);
         String texto = "";
 
-        for (Mensaje mensaje : mensajes) {
-            texto += mensaje.getMessage() + "\n";
-        }
-
-        conversacion.setText(texto);
+        final ConversationArrayAdapter adapter = new ConversationArrayAdapter(this.getApplicationContext(), mensajes);
+        conversacion.setAdapter(adapter);
+        conversacion.setSelection(conversacion.getAdapter().getCount()-1);
     }
 }

@@ -89,18 +89,21 @@ public class GestorDB {
 
     public ArrayList<Mensaje> obtenerMensajes(String contacto){
         ArrayList<Mensaje> mensajes = new ArrayList<Mensaje>();
-        Mensaje m = null;
         db = helper.getReadableDatabase();
         Cursor c2 = db.rawQuery("SELECT ID FROM CONVERSATION WHERE REMITENTE = '" + contacto + "'", null);
         c2.move(1);
         int idConversation = c2.getInt(0);
 
-        Cursor c = db.rawQuery("SELECT MESSAGE FROM MESSAGES WHERE ID_CONVERSATION = '" + idConversation + "'",null);
+        Cursor c = db.rawQuery("SELECT MESSAGE, FECHA, DE, PARA FROM MESSAGES WHERE ID_CONVERSATION = '" + idConversation + "'",null);
         Log.i("CC", "He consultado los mensajes.");
 
         while(c.move(1)){
-             m = new Mensaje ();
+            Mensaje m = new Mensaje ();
             m.setMessage(c.getString(0));
+            m.setFecha(c.getString(1));
+            m.setFrom(c.getString(2));
+            Log.d(Config.TAG, m.getFrom());
+            m.setReceiver(c.getString(3));
             mensajes.add(m);
         }
         Log.i("CC","He cargado los mensajes.");
@@ -136,6 +139,8 @@ public class GestorDB {
         nuevoReg.put("ID_CONVERSATION", idConversacion);
         nuevoReg.put("MESSAGE", mensaje.getMessage());
         nuevoReg.put("FECHA", mensaje.getFecha());
+        nuevoReg.put("PARA", mensaje.getReceiver());
+        nuevoReg.put("DE", mensaje.getFrom());
         db.insert("MESSAGES", null, nuevoReg);
     }
 

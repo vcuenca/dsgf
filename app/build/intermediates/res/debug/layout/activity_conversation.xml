@@ -1,61 +1,37 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
     android:layout_height="fill_parent"
 
-    tools:context="es.uv.androidchat.ConversationActivity">
+    tools:context="es.uv.androidchat.ConversationActivity"
+    android:orientation="vertical">
 
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
 
-        <TextView android:text="Iván Ramón Torán"
+    <TextView android:text="Iván Ramón Torán"
             android:id="@+id/titRemitente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-
-        android:layout_weight="0.5">
-        android:
-
-        <ScrollView
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/scrollView"
-            android:layout_weight="1.0">
+        android:layout_weight="0.5" />
 
-            <EditText
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:id="@+id/editText2"
-                android:layout_column="0"
-                android:layout_weight="1.0"
-                android:text=""
-                android:singleLine="false"
-                android:editable="false"
-                android:enabled="false"
-                android:textColor="@android:color/black"
-                android:nestedScrollingEnabled="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </ScrollView>
-    </TableRow>
 
-    <TableRow
+    <ListView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="wrap_content"
+        android:id="@+id/listView3"
+        android:layout_weight="9"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0">
 
         <EditText
             android:id="@+id/tEnvio"
-            android:layout_column="0"
-            android:layout_weight="1.0"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_weight="1" />
 
         <Button
             android:layout_width="wrap_content"
@@ -63,7 +39,8 @@
             android:text="Enviar"
             android:id="@+id/botonEnviar" />
 
-    </TableRow>
+    </LinearLayout>
 
-</TableLayout>
+
+</LinearLayout>
 <!-- From: file:/Users/k3rnel/Documents/Programacion/Android/dsgf/app/src/main/res/layout/activity_conversation.xml -->
