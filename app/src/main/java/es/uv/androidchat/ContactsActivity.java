@@ -1,8 +1,14 @@
 package es.uv.androidchat;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.text.format.Formatter;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import es.uv.androidchat.JavaObjects.Config;
 import main.java.Conversation;
@@ -32,6 +39,33 @@ public class ContactsActivity extends Activity {
         Log.i(Config.TAG, "Hola");
         boolean usuarioRegistrado = true;
 
+        /*
+         * Antes de continuar se comprueba si tenemos conexión a internet,
+         * y en caso contrario se redirige a ajustes del sistema
+         * para activar una conexión.
+         *
+         * Creo que si una vez te sale la pagina de ajustes le das a atrás la comprobación tre la saltas,
+         * igual sería mejor poner un while...
+         *
+         *  También sería interesante comprobar si podemos conectarnos con el servidor.
+         */
+
+        ConnectivityManager conMan = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo.State internet_movil = conMan.getNetworkInfo(0).getState();
+        NetworkInfo.State wifi = conMan.getNetworkInfo(1).getState();
+
+        if (!(((internet_movil != NetworkInfo.State.CONNECTED) || (internet_movil != NetworkInfo.State.CONNECTING))
+                ||
+                ((wifi != NetworkInfo.State.CONNECTED) || (wifi != NetworkInfo.State.CONNECTING)))) {
+
+            Toast toast = Toast.makeText(getApplicationContext(), "No tiene conexión a internet activada, por favor actívela.", Toast.LENGTH_LONG);
+            toast.show();
+            startActivity(new Intent(Settings.ACTION_NETWORK_OPERATOR_SETTINGS));
+        }
+        else{
+            Log.d(Config.TAG, "Tienes internet");
+        }
+
         if (GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("user").equals("")) {
             Log.d(Config.TAG, "HolaHOLAHOLA");
             Config.user.setUser(GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("user"));
@@ -47,6 +81,10 @@ public class ContactsActivity extends Activity {
         final Activity activity = this;
         contacts = (ListView)findViewById(R.id.listView);
         ImageView iv = (ImageView)findViewById(R.id.imageView);
+
+
+
+        //---------//
 
         if (usuarioRegistrado)
             cargarConversaciones();

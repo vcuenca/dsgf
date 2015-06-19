@@ -3,13 +3,16 @@ package es.uv.androidchat;
 import android.app.Activity;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.text.format.Formatter;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import es.uv.androidchat.JavaObjects.ClientThread;
 import es.uv.androidchat.JavaObjects.Config;

@@ -2,11 +2,46 @@
 <items version="2" >
 
     <item
-        jar="/Users/k3rnel/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
+        jar="C:\Users\Adrian\AndroidStudioProjects\dsgf\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="C:\Users\Adrian\AndroidStudioProjects\dsgf\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-afb1f2d02c0ac6d20a3587602867221161a7e769.jar" />
+    </item>
+    <item
+        jar="C:\Users\Adrian\AndroidStudioProjects\dsgf\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="C:\Users\Adrian\AndroidStudioProjects\dsgf\app\build\intermediates\pre-dexed\debug\classes-b846eb127f0b9afbd43b1a5a5b86955b358ac304.jar" />
+    </item>
+    <item
+        jar="C:\Users\Adrian\AndroidStudioProjects\dsgf\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="C:\Users\Adrian\AndroidStudioProjects\dsgf\app\build\intermediates\pre-dexed\debug\classes-a8ba478ab1cf7e7e9fa5a46777d39792378b5d04.jar" />
+    </item>
+    <item
+        jar="C:\Users\Adrian\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="C:\Users\Adrian\AndroidStudioProjects\dsgf\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-934e6aa317005d8f826332e24b9412256b55ecb7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Adrian\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="/Users/k3rnel/Documents/Programacion/Android/dsgf/app/build/intermediates/pre-dexed/debug/gson-2.3.1-4b59fc71dc6c7094c65da9dc1b24e4177c8eb135.jar" />
+        <dex dex="C:\Users\Adrian\AndroidStudioProjects\dsgf\app\build\intermediates\pre-dexed\debug\gson-2.3.1-765a1875b31392df604181927efe713b2096a510.jar" />
+    </item>
+    <item
+        jar="C:\Users\Adrian\AndroidStudioProjects\dsgf\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="C:\Users\Adrian\AndroidStudioProjects\dsgf\app\build\intermediates\pre-dexed\debug\classes-a58b87b57135d2d1168ebeb860bb73f011d6ea04.jar" />
     </item>
 
 </items>

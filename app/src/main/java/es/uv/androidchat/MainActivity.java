@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import es.uv.androidchat.JavaObjects.ClientThread;
 import es.uv.androidchat.JavaObjects.Config;
@@ -30,12 +31,13 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         GestorDB.getInstance(getApplicationContext());
+
+        //Por que se pone esto si luego se lanzan las conversaciones ??
         setContentView(R.layout.activity_register);
+
         TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
         String imei = telephonyManager.getDeviceId();
         WifiManager wm = (WifiManager) getSystemService(WIFI_SERVICE);
-        String ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
-
 
 
             //ClientThread c = new ClientThread("10.0.2.2", 1234, imei, ip);

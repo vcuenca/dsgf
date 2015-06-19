@@ -8,7 +8,9 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-        <TextView android:text="Iván Ramón Torán" android:layout_width="wrap_content"
+        <TextView android:text="Iván Ramón Torán"
+            android:id="@+id/titRemitente"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </TableRow>
 
@@ -64,4 +66,4 @@
     </TableRow>
 
 </TableLayout>
-<!-- From: file:/Users/k3rnel/Documents/Programacion/Android/dsgf/app/src/main/res/layout/activity_conversation.xml -->
+<!-- From: file:/C:/Users/Adrian/AndroidStudioProjects/dsgf/app/src/main/res/layout/activity_conversation.xml -->

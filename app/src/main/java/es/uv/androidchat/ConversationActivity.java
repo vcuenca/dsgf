@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import es.uv.androidchat.JavaObjects.Config;
 import es.uv.androidchat.JavaObjects.GestorDB;
@@ -34,6 +35,8 @@ public class ConversationActivity extends ActionBarActivity {
         conversacion = (EditText) findViewById(editText2);
         botonEnviar = (Button)findViewById(R.id.botonEnviar);
         tEnvio = (EditText)findViewById(R.id.tEnvio);
+        TextView tituloRemitente = (TextView) findViewById(R.id.titRemitente);
+
 
         botonEnviar.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -54,6 +57,7 @@ public class ConversationActivity extends ActionBarActivity {
 
         Bundle bundle = getIntent().getExtras();
         remitente = bundle.getString("remitente");
+        tituloRemitente.setText(remitente);
         cargarMensajes();
     }
 

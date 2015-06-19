@@ -53,6 +53,7 @@ public class Facade {
         params.add(remitente);
         params.add(text);
 
+        // "ivan", "ramon" es usuario-contrasenya??
         ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT, "ivan", "ramon", params, 2);
         client.start();
     }
