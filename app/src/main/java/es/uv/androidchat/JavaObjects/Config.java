@@ -1,5 +1,7 @@
 package es.uv.androidchat.JavaObjects;
 
+import es.uv.androidchat.ConversationActivity;
+
 public interface Config {
 
     // used to share GCM regId with application server - using php app server

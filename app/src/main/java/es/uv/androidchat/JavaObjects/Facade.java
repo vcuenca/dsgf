@@ -4,9 +4,12 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+import es.uv.androidchat.ConversationActivity;
 import main.java.Conversation;
 
 public class Facade {
+
+    public static ConversationActivity conversacionActual = null;
 
     public Facade(){}
 

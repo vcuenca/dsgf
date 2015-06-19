@@ -1,5 +1,6 @@
 package es.uv.androidchat;
 
+import android.app.Activity;
 import android.app.IntentService;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -59,11 +60,18 @@ public class GCMNotificationIntentService extends IntentService {
                 }
 
                 int idConversacion = GestorDB.getInstance(this.getApplicationContext()).obtenerIdConversacion(obj2.getFrom());
-                GestorDB.getInstance(this.getApplicationContext()).insertarMensaje(idConversacion ,obj2);
+                GestorDB.getInstance(this.getApplicationContext()).insertarMensaje(idConversacion, obj2);
                 Log.d(Config.TAG, "Mensaje añadido");
 
                 sendNotification(obj2.getFrom() + ": " + obj2.getMessage());
                 Log.i(TAG, "Received: " + extras.toString());
+
+                Config.facade.conversacionActual.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Config.facade.conversacionActual.cargarMensajes();
+                    }
+                });
             }
         }
 

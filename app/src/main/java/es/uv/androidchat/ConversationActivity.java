@@ -37,6 +37,7 @@ public class ConversationActivity extends ActionBarActivity {
         tEnvio = (EditText)findViewById(R.id.tEnvio);
         TextView tituloRemitente = (TextView) findViewById(R.id.titRemitente);
 
+        Config.facade.conversacionActual = (ConversationActivity)activity;
 
         botonEnviar.setOnClickListener(new View.OnClickListener(){
             @Override
