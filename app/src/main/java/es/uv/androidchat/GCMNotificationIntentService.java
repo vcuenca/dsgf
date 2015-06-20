@@ -2,6 +2,7 @@ package es.uv.androidchat;
 
 import android.app.Activity;
 import android.app.IntentService;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -13,6 +14,7 @@ import android.util.Log;
 
 import es.uv.androidchat.JavaObjects.Config;
 import es.uv.androidchat.JavaObjects.GestorDB;
+import main.java.Conversation;
 import main.java.Mensaje;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
@@ -23,6 +25,12 @@ public class GCMNotificationIntentService extends IntentService {
 
     public static final int NOTIFICATION_ID = 1;
     private NotificationManager mNotificationManager;
+
+
+    int icono_v=R.drawable.gcmlogo;
+    int icono_r=R.drawable.gcmlogo;
+
+
     NotificationCompat.Builder builder;
 
     public GCMNotificationIntentService() {
@@ -42,29 +50,36 @@ public class GCMNotificationIntentService extends IntentService {
         if (!extras.isEmpty()) {
             if (GoogleCloudMessaging.MESSAGE_TYPE_SEND_ERROR   //Esto estaba aquÃ­ , lo dejo por filtrado ,por si hay problemas luego con GCM.
                     .equals(messageType)) {
-                sendNotification("Send error: " + extras.toString());
+                sendNotification("Send error: " + extras.toString(),0,"");
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_DELETED
                     .equals(messageType)) {
                 sendNotification("Deleted messages on server: "
-                        + extras.toString());
+                        + extras.toString(),0,"");
             } else if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE
                     .equals(messageType)) {
                 //Esto es una librería de google que transforma Json en objetos
                 Gson gson=new Gson();
                 //Le pasamos el String que recibimos(Json) y la clase a la que queramos que lo comparta.
+
+
+                /// GUARDAR MENSAJE EN LA BBDD :)
                 Mensaje obj2 = gson.fromJson(String.valueOf(extras.get(Config.MESSAGE_KEY)), Mensaje.class);
 
+                //Miramos si existe conversación , y si no la creamos.
                 if (!GestorDB.getInstance(this.getApplicationContext()).existeConversacion(obj2.getFrom())) {
                     GestorDB.getInstance(this.getApplicationContext()).iniciarConversacion(obj2.getFrom());
                     Log.d(Config.TAG, "Conversacion añadida");
                 }
 
                 int idConversacion = GestorDB.getInstance(this.getApplicationContext()).obtenerIdConversacion(obj2.getFrom());
+
+                //Insertamos el mensaje en la conversación
                 GestorDB.getInstance(this.getApplicationContext()).insertarMensaje(idConversacion, obj2);
                 //Config.facade.sendConfirmation(obj2.getId());
                 Log.d(Config.TAG, "Mensaje añadido");
 
-                sendNotification(obj2.getFrom() + ": " + obj2.getMessage());
+               sendNotification(obj2.getMessage(), icono_r, obj2.getFrom());
+
                 Log.i(TAG, "Received: " + extras.toString());
 
                 //Reseteamos los mensajes pendientes si se cumple la condicion
@@ -80,27 +95,43 @@ public class GCMNotificationIntentService extends IntentService {
                         }
                     });
                 }
+                int maxId = 0;
 
+                //Obtenemos el id de la conversacion
+
+
+                        maxId = obj2.getId();
+
+                Config.facade.sendConfirmation(maxId);
             }
         }
 
         GcmBroadcastReceiver.completeWakefulIntent(intent);
     }
 
-    private void sendNotification(String msg) {
+
+
+
+
+
+
+    private void sendNotification(String msg,int icono,String remitente) {
         //Log.d(TAG, "Preparing to send notification...: " + msg);
         mNotificationManager = (NotificationManager) this
                 .getSystemService(Context.NOTIFICATION_SERVICE);
 
+    Intent i=new Intent(getApplicationContext(), ConversationActivity.class);
+        i.putExtra("remitente",remitente);
 
         PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0,
-                new Intent(getApplicationContext(), ContactsActivity.class), 0);
+                i, 0);
+
 
         //Vibrator v = (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
 //        v.vibrate(5000);
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
-                this).setSmallIcon(R.drawable.abc_btn_check_to_on_mtrl_000)
+                this).setSmallIcon(icono)
                 .setContentTitle("Nuevo mensaje")
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
                 .setLights(Color.RED, 1, 2)

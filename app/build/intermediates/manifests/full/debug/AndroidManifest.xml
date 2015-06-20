@@ -65,8 +65,8 @@
             android:name="es.uv.androidchat.FindContactActivity"
             android:label="@string/findContactActivity" />
         <activity
-            android:name="es.uv.androidchat.MainActivity"
-            android:label="@string/mainActivity" />
+            android:name="es.uv.androidchat.IpActivity"
+            android:label="@string/iPActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"

@@ -36,30 +36,6 @@ public class RegisterActivity extends ActionBarActivity {
         final Button registerButton = (Button) findViewById(R.id.registerButton);
         context = this.getApplicationContext();
 
-/*
-        helper = new QuotesReaderDbHelper(getApplicationContext());
-        db = helper.getWritableDatabase();
-                regId = getIntent().getStringExtra("regId");
-      regId = getIntent().getStringExtra("regId");
-        Log.d("MainActivity", "regId: " + regId);
-
-        final Context context = this;
-        shareRegidTask = new AsyncTask() {
-
-            protected void onPostExecute(String result) {
-                shareRegidTask = null;
-                Toast.makeText(getApplicationContext(), result,
-                        Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            protected Object doInBackground(Object[] params) {
-                String result = appUtil.shareRegIdWithAppServer(context, regId);
-                return result;
-            }
-        };
-        shareRegidTask.execute(null, null, null);
-        */
         correo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,6 +73,8 @@ public class RegisterActivity extends ActionBarActivity {
 
         ArrayList<Object> params = new ArrayList<Object>();
         params.add(cloudID);
+        String ip=GestorDB.getInstance(getApplicationContext()).obtenerPropiedad("IP_SERVER");
+
         ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT ,user, pass, params, 1);
         client.start();
         try {
@@ -134,6 +112,8 @@ public class RegisterActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(activity, IpActivity.class);
+            startActivity(intent);
             return true;
         }
 

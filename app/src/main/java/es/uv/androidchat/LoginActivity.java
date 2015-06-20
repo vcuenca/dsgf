@@ -79,7 +79,7 @@ public class LoginActivity extends Activity {
                         GestorDB.getInstance(activity.getApplicationContext()).insertarPropiedad("usersaved", "s");
                         //fa
                         //Abrimos la lista de contactos, pantalla principal
-                        Intent intent = new Intent(activity, MainActivity.class);
+                        //Intent intent = new Intent(activity, MainActivity.class);
                         //intent.putExtra(EXTRA_MESSAGE, message);
                         //Obtenemos las conversaciones pendientes
                         ArrayList<Conversation> conversations = client.getMessagesFromLocal();
@@ -91,8 +91,8 @@ public class LoginActivity extends Activity {
 
                         Bundle informacion = new Bundle();
                         informacion.putSerializable("conversations", conversations);
-                        intent.putExtras(informacion);
-                        startActivity(intent);
+                       // intent.putExtras(informacion);
+                       // startActivity(intent);
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();

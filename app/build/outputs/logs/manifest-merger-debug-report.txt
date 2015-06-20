@@ -125,7 +125,7 @@ ADDED from AndroidManifest.xml:51:9
 		ADDED from AndroidManifest.xml:53:13
 	android:name
 		ADDED from AndroidManifest.xml:52:13
-activity#es.uv.androidchat.MainActivity
+activity#es.uv.androidchat.IpActivity
 ADDED from AndroidManifest.xml:54:9
 	android:label
 		ADDED from AndroidManifest.xml:56:13

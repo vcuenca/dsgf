@@ -3,7 +3,7 @@
 
     <string name="app_name">AndroidChat</string>
     <string name="registered_user">Has sido registrado en el sistema!!!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Ajustes</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_register_result">RegisterResultActivity</string>
@@ -17,5 +17,6 @@
 
     <string name="findContactActivity">findContactActivity</string>
     <string name="mainActivity">mainActivity</string>
+    <string name="iPActivity">iPActivity</string>
 
 </resources>

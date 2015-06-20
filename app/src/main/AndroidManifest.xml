@@ -52,8 +52,8 @@
             android:name=".FindContactActivity"
             android:label="@string/findContactActivity"></activity>
         <activity
-            android:name=".MainActivity"
-            android:label="@string/mainActivity"></activity>
+            android:name=".IpActivity"
+            android:label="@string/iPActivity"></activity>
     </application>
 
 </manifest>

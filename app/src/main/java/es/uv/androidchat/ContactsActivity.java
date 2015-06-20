@@ -79,8 +79,11 @@ public class ContactsActivity extends Activity {
             Config.user.setUser(GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("user"));
             Config.user.setPassword(GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("pass"));
         }
+        String val=GestorDB.getInstance(getApplicationContext()).obtenerPropiedad("IP_SERVER");
 
-        Log.d(Config.TAG, "PEPE");
+        if(!val.equals(""))
+         Config.IP_SERVER=val;
+
         Log.d(Config.TAG, "PEPE");
         setContentView(R.layout.activity_contacts);
         final Activity activity = this;
@@ -112,17 +115,7 @@ public class ContactsActivity extends Activity {
                 startActivity(intent);
             }
         });
-        /*
-        contacts.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(activity, ConversationActivity.class);
-                remitente = (String) contacts.getSelectedItem();
-                Log.i("CC", "El remitente de la conversación seleccionada es: " + remitente);
-                intent.putExtra("remitente",remitente);
-                startActivity(intent);
-            }
-        });*/
+
 
     }
 
