@@ -68,7 +68,7 @@ public class LoginActivity extends Activity {
 
                 Log.d(Config.TAG, GestorDB.getInstance(activity.getApplicationContext()).obtenerPropiedad("usersaved"));
 
-                ClientThread client = new ClientThread("10.0.2.2", 1235, tUsuario.getText().toString(), tPassword.getText().toString(), null, 0);
+                ClientThread client = new ClientThread(Config.IP_SERVER, 1235, tUsuario.getText().toString(), tPassword.getText().toString(), null, 0);
 
                client.start();
                 Log.d(Config.TAG, "DESPUES DE CLIENT THREAD");

@@ -73,9 +73,11 @@ public class RegisterActivity extends ActionBarActivity {
 
         ArrayList<Object> params = new ArrayList<Object>();
         params.add(cloudID);
-        String ip=GestorDB.getInstance(getApplicationContext()).obtenerPropiedad("IP_SERVER");
 
+        Log.d(Config.TAG, "ENVIANDO AL SERVIDOR: " + Config.IP_SERVER);
         ClientThread client = new ClientThread(Config.IP_SERVER, Config.PORT ,user, pass, params, 1);
+        Log.d(Config.TAG, "YA HEMOS ENVIADO AL SERVIDOR: " + Config.IP_SERVER);
+
         client.start();
         try {
             client.join();
