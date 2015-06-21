@@ -2,6 +2,7 @@ package es.uv.androidchat;
 
 import android.app.ActionBar;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -65,6 +66,8 @@ public class IpActivity extends ActionBarActivity
                 }else{
                     GestorDB.getInstance(getApplicationContext()).insertarPropiedad("IP_SERVER", ip.getText().toString());
                 }
+                Intent intent = new Intent(activity, RegisterActivity.class);
+                startActivity(intent);
             }
         });
 

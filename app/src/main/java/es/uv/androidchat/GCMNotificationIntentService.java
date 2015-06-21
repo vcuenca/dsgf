@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -96,11 +97,7 @@ public class GCMNotificationIntentService extends IntentService {
                     });
                 }
                 int maxId = 0;
-
-                //Obtenemos el id de la conversacion
-
-
-                        maxId = obj2.getId();
+                maxId = obj2.getId();
 
                 Config.facade.sendConfirmation(maxId);
             }
@@ -127,14 +124,15 @@ public class GCMNotificationIntentService extends IntentService {
                 i, 0);
 
 
-        //Vibrator v = (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
-//        v.vibrate(5000);
+
+       // Vibrator v = (Vibrator) this.getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
+       // v.vibrate(1000);
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
                 this).setSmallIcon(icono)
-                .setContentTitle("Nuevo mensaje")
+                .setContentTitle("Nuevo mensaje de: "+remitente)
                 .setStyle(new NotificationCompat.BigTextStyle().bigText(msg))
-                .setLights(Color.RED, 1, 2)
+                .setLights(Color.GREEN, 1, 2)
                 .setAutoCancel(true)
                 .setContentIntent(contentIntent)
                 .setSubText(msg);

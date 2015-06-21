@@ -73,7 +73,7 @@ public class ContactsActivity extends Activity {
             Log.d(Config.TAG, "USUARIO: " + Config.user.getUser());
 
             usuarioRegistrado = false;
-            Intent intent = new Intent(this, LoginActivity.class);
+            Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
         }else{
             Config.user.setUser(GestorDB.getInstance(this.getApplicationContext()).obtenerPropiedad("user"));

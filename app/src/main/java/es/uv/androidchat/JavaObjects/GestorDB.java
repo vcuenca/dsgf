@@ -20,7 +20,7 @@ public class GestorDB {
     private QuotesReaderDbHelper helper = null;
     private SQLiteDatabase db = null;
     private static GestorDB gestorDB = null;
-
+    private static int maxId=0;
 
     private GestorDB(Context context) {
         helper = new QuotesReaderDbHelper(context);
@@ -137,15 +137,17 @@ public class GestorDB {
 
 
     public void insertarMensaje(int idConversacion, Mensaje mensaje){
-        ContentValues nuevoReg = new ContentValues();
-        nuevoReg.put("ID_CONVERSATION", idConversacion);
-        nuevoReg.put("MESSAGE", mensaje.getMessage());
-        nuevoReg.put("FECHA", mensaje.getFecha());
-        nuevoReg.put("PARA", mensaje.getReceiver());
-        nuevoReg.put("DE", mensaje.getFrom());
-        //Aumentamos el número de mensajes pendientes
-        db.execSQL("UPDATE CONVERSATION SET MENSAJES_PENDIENTES=MENSAJES_PENDIENTES + 1 WHERE REMITENTE = '" + mensaje.getFrom() + "'");
-        db.insert("MESSAGES", null, nuevoReg);
+
+            ContentValues nuevoReg = new ContentValues();
+            nuevoReg.put("ID_CONVERSATION", idConversacion);
+            nuevoReg.put("MESSAGE", mensaje.getMessage());
+            nuevoReg.put("FECHA", mensaje.getFecha());
+            nuevoReg.put("PARA", mensaje.getReceiver());
+            nuevoReg.put("DE", mensaje.getFrom());
+            //Aumentamos el número de mensajes pendientes
+            db.execSQL("UPDATE CONVERSATION SET MENSAJES_PENDIENTES=MENSAJES_PENDIENTES + 1 WHERE REMITENTE = '" + mensaje.getFrom() + "'");
+            db.insert("MESSAGES", null, nuevoReg);
+
     }
 
     public void resetMensajesPendientes(String from){
