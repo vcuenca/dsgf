@@ -58,6 +58,7 @@ public class IpActivity extends ActionBarActivity
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Config.IP_SERVER=ip.getText().toString();
                 if(existe){
                     GestorDB.getInstance(getApplicationContext()).actualizarPropiedad("IP_SERVER", ip.getText().toString());
 
